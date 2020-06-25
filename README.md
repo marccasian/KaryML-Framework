@@ -10,6 +10,6 @@ If this is helpful in your research, cite us:
 
   [Casian-Nicolae Marc, Gabriela Czibula. "KarySOM: An Unsupervised Learning based Approach for Human Karyotyping using Self-Organizing Maps" *14th International conference on Intelligent Computer Communication and Processing (ICCP)*, pages 167-174, International conference on Intelligent Computer Communication and Processing. 2018.](https://www.researchgate.net/publication/329064942_KarySOM_An_Unsupervised_Learning_based_Approach_for_Human_Karyotyping_using_Self-Organizing_Maps)
   
-   __Casian-Nicolae Marc__ and Gabriela Czibula.
+   __Casian-Nicolae Marc__.
   _A study towards using unsupervised learning in automating Human Karyotyping_.
   In _Studia Universitatis Babes-Bolyai, Informatica_, 2020
