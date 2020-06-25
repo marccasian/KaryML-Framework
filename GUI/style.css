@@ -1,0 +1,156 @@
+QMainWindow{
+    background-color: rgba(168,202,213,1);
+    border: 0.20em;
+}
+
+QLabel{
+    color: rgba(86,129,143,1);
+    font-family: 'Rouge Script', cursive;
+    min-width: 5.10em;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0em 0em 0em 3.00em;
+}
+
+QLineEdit{
+    border: 0.15em solid rgba(86,129,143,1);
+    font-family: 'Rouge Script', cursive;
+    font-weight: bold;
+    font-size: 24;
+}
+
+
+QPushButton{
+    background: rgba(77,171,203,1);
+    color: #ffffff;
+    padding: 0.10em 0.20em 0.10em 0.20em;
+    max-width: 20.00em;
+    max-height: 4.00em;
+    min-height: 2.00em;
+    margin: 0em 2.00em 0em 30.00em;
+    border-radius: 0.6em;
+    display: inline-block;
+    font-family: 'Rouge Script', cursive;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+  background: #3cb0fd;
+}
+
+
+#_button{
+    background: rgba(77,171,203,1);
+    color: #ffffff;
+    padding: 0.10em 0.20em 0.10em 0.20em;
+    max-width: 20.00em;
+    max-height: 4.00em;
+    min-height: 4.00em;
+    margin: 0em 2.00em 2em 30.00em;
+    border-radius: 0.6em;
+    display: inline-block;
+    font-family: 'Rouge Script', cursive;
+    font-weight: bold;
+}
+
+
+
+#_dist_label QLabel{
+    padding: 0.10em 1.70em;
+    margin: 0 0 0 3.00em;
+    color: rgba(22,84,105,1);
+    font-family: 'Rouge Script', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 8px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #082b34;
+}
+
+
+ #_features_label QLabel{
+    margin: 0 0 0 3.00em;
+    color: rgba(22,84,105,1);
+    font-family: 'Rouge Script', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 8px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #082b34;
+ }
+
+
+#_app_title QLabel{
+    padding: 0.2em 4em;
+    margin:0 0 0 0.3em;
+    min-height: 60px;
+    color: rgba(22,84,105,1);
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+    text-shadow: 10px 30px 3px #082b34;
+}
+
+
+#errors_label QLabel{
+    padding: 0.10em 1.70em;
+    margin: 0 0 0 3.00em;
+    color: rgba(154,74,74,1);
+    font-family: 'Rouge Script', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 8px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #082b34;
+}
+
+
+#errors_label_text QLabel{
+    padding: 0.10em 1.70em;
+    margin: 0 0 0 3.00em;
+    color: rgba(154,74,74,1);
+    font-family: 'Rouge Script', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 8px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #082b34;
+}
+
+#info_label QLabel{
+    padding: 0.10em 1.70em;
+    margin: 0 0 0 3.00em;
+    color: rgba(86,129,143,1);
+    font-family: 'Rouge Script', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 8px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #082b34;
+}
+
+
+#info_label_text QLabel{
+    padding: 0.10em 1.70em;
+    margin: 0 0 0 3.00em;
+    color: rgba(86,129,143,1);
+    font-family: 'Rouge Script', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 8px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #082b34;
+}
+
+
+QCheckBox {
+    color: rgba(86,129,143,1);
+    display: inline-block;
+    font-family: 'Rouge Script', cursive;
+    min-width: 5.0em;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 0 20em;
+}

@@ -1,0 +1,1262 @@
+{
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\0-0.bmp": {
+        "nr": "0",
+        "color": [
+            65,
+            65,
+            65
+        ],
+        "chromosome_len": 99.11653581071351,
+        "short_chromatid_ratio": 0.6220869897122413,
+        "centromer_position": 38.95549610188526,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\0-0-rotations\\0-0-170.bmp",
+        "bandage_profile": [
+            0.6139561707035756,
+            0.5375836562169778,
+            0.5077302125038496,
+            0.36490641711229943,
+            0.502058214590184,
+            0.5423871562047639,
+            0.539537606087211,
+            0.542735648476258,
+            0.4208451294956485,
+            0.33787737317149086,
+            0.36776606596395783,
+            0.4772807326523424,
+            0.5444874955970412,
+            0.5569614009125663,
+            0.6324929971988795
+        ],
+        "chromosome_area": 2353
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\1-0.bmp": {
+        "nr": "1",
+        "color": [
+            185,
+            65,
+            65
+        ],
+        "chromosome_len": 100.82396000686835,
+        "short_chromatid_ratio": 0.7268260229854361,
+        "centromer_position": 44.37976675499852,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\1-0-rotations\\1-0-10.bmp",
+        "bandage_profile": [
+            0.6884531590413943,
+            0.5940550688360451,
+            0.47054367201426023,
+            0.4464129181084198,
+            0.4999634636463281,
+            0.5114475201845443,
+            0.49272331154684096,
+            0.5313432835820896,
+            0.43791855203619906,
+            0.49707998307236567,
+            0.468077474892396,
+            0.6451706608569353,
+            0.6624953165979768,
+            0.6769515353311136,
+            0.7192717086834733
+        ],
+        "chromosome_area": 2141
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\10-0.bmp": {
+        "nr": "10",
+        "color": [
+            65,
+            130,
+            130
+        ],
+        "chromosome_len": 76.32760756249938,
+        "short_chromatid_ratio": 0.4829146543863189,
+        "centromer_position": 24.567126089430193,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\10-0-rotations\\10-0-5.bmp",
+        "bandage_profile": [
+            0.6923158452570217,
+            0.4980170599313172,
+            0.3213000268600591,
+            0.4779128180197699,
+            0.5557586141252617,
+            0.46303921568627454,
+            0.4591140159767611,
+            0.350188287235424,
+            0.3975428145941921,
+            0.3248848532701671,
+            0.5557901793195911,
+            0.6089160192378839,
+            0.5334313725490196,
+            0.4757825937392501,
+            0.5803921568627451
+        ],
+        "chromosome_area": 1845
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\11-0.bmp": {
+        "nr": "11",
+        "color": [
+            185,
+            130,
+            130
+        ],
+        "chromosome_len": 73.09164016505191,
+        "short_chromatid_ratio": 0.6331942860364154,
+        "centromer_position": 31.26620503262001,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\11-0-rotations\\11-0-170.bmp",
+        "bandage_profile": [
+            0.6116993464052287,
+            0.5184738955823294,
+            0.40472813238770683,
+            0.6064570655848547,
+            0.7114630467571644,
+            0.5695917711346834,
+            0.5489361702127659,
+            0.45294117647058824,
+            0.4618800461361015,
+            0.5499455337690632,
+            0.6102521008403362,
+            0.6261973641915782,
+            0.5505070993914807,
+            0.5711864406779661,
+            0.6670343137254902
+        ],
+        "chromosome_area": 1832
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\12-0.bmp": {
+        "nr": "12",
+        "color": [
+            65,
+            130,
+            185
+        ],
+        "chromosome_len": 74.03213055072546,
+        "short_chromatid_ratio": 0.6915985628314426,
+        "centromer_position": 31.19399267847292,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\12-0-rotations\\12-0-170.bmp",
+        "bandage_profile": [
+            0.7212885154061625,
+            0.5525252525252525,
+            0.447722029988466,
+            0.5730243612596554,
+            0.5553999377528789,
+            0.5398452959165317,
+            0.5632457238214434,
+            0.4894561598224196,
+            0.3486603801826074,
+            0.32247797669792555,
+            0.48348583877995643,
+            0.5134497549019608,
+            0.4222745098039216,
+            0.5713193752077101,
+            0.6978291316526611
+        ],
+        "chromosome_area": 1781
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\13-0.bmp": {
+        "nr": "13",
+        "color": [
+            185,
+            130,
+            185
+        ],
+        "chromosome_len": 76.00581563005888,
+        "short_chromatid_ratio": 0.7449005260297306,
+        "centromer_position": 37.58977809792235,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\13-0-rotations\\13-0-165.bmp",
+        "bandage_profile": [
+            0.6018239854081168,
+            0.4168651509683628,
+            0.3558897243107769,
+            0.4697136408520243,
+            0.4454636091724825,
+            0.5005520654863888,
+            0.3910696952048146,
+            0.3888138862102218,
+            0.36191282268303004,
+            0.2639954532537653,
+            0.4309043020193152,
+            0.45597722960151804,
+            0.37561939504483965,
+            0.5533875338753388,
+            0.6625708061002178
+        ],
+        "chromosome_area": 1807
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\14-0.bmp": {
+        "nr": "14",
+        "color": [
+            65,
+            130,
+            250
+        ],
+        "chromosome_len": 65.42776175087745,
+        "short_chromatid_ratio": 0.6017473550965169,
+        "centromer_position": 24.39258843851428,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\14-0-rotations\\14-0-175.bmp",
+        "bandage_profile": [
+            0.6371615312791784,
+            0.5147273507943324,
+            0.41017663263652565,
+            0.4435574229691877,
+            0.4038468720821662,
+            0.4515356585111921,
+            0.3704470588235294,
+            0.30665990534144694,
+            0.32389251997095136,
+            0.34633794694348324,
+            0.3408077761018938,
+            0.3350574712643678,
+            0.42735834491276825,
+            0.5456633103691927,
+            0.704256336681014
+        ],
+        "chromosome_area": 1697
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\15-0.bmp": {
+        "nr": "15",
+        "color": [
+            185,
+            130,
+            250
+        ],
+        "chromosome_len": 65.49889490618577,
+        "short_chromatid_ratio": 0.8128206997782934,
+        "centromer_position": 43.266144359717046,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\15-0-rotations\\15-0-145.bmp",
+        "bandage_profile": [
+            0.6573099415204678,
+            0.4870071105365223,
+            0.4019798210546355,
+            0.43861508567390917,
+            0.5928169287516987,
+            0.5350958360872439,
+            0.49415395787944805,
+            0.3912020460358056,
+            0.34658553076402976,
+            0.2739064856711915,
+            0.4130718954248366,
+            0.30656167979002624,
+            0.3840958605664488,
+            0.5023001508295626,
+            0.6411055988660525
+        ],
+        "chromosome_area": 1600
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\16-0.bmp": {
+        "nr": "16",
+        "color": [
+            65,
+            185,
+            65
+        ],
+        "chromosome_len": 65.06672684275975,
+        "short_chromatid_ratio": 0.6665767563145879,
+        "centromer_position": 29.470859379020684,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\16-0-rotations\\16-0-10.bmp",
+        "bandage_profile": [
+            0.7447415329768271,
+            0.5979716024340771,
+            0.3995431182181611,
+            0.42300653594771237,
+            0.5947712418300654,
+            0.5336417713152677,
+            0.40257476728064967,
+            0.4909237921972913,
+            0.41024340770791073,
+            0.27760242308305433,
+            0.3633370329263781,
+            0.493224616579305,
+            0.5675481201654974,
+            0.5649411764705883,
+            0.669547819127651
+        ],
+        "chromosome_area": 1464
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\17-0.bmp": {
+        "nr": "17",
+        "color": [
+            185,
+            185,
+            65
+        ],
+        "chromosome_len": 63.08958825581011,
+        "short_chromatid_ratio": 0.9424409543631227,
+        "centromer_position": 54.23039738587952,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\17-0-rotations\\17-0-135.bmp",
+        "bandage_profile": [
+            0.6944971537001897,
+            0.5309648611920015,
+            0.4009162543522082,
+            0.5211764705882354,
+            0.573342670401494,
+            0.4227155012948576,
+            0.3331671651711532,
+            0.37046677077910806,
+            0.4729917773561037,
+            0.3614168247944339,
+            0.3516702977487291,
+            0.4288596992194936,
+            0.49117647058823527,
+            0.5223085460599335,
+            0.7051620648259305
+        ],
+        "chromosome_area": 1500
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\18-0.bmp": {
+        "nr": "18",
+        "color": [
+            65,
+            185,
+            130
+        ],
+        "chromosome_len": 60.206563391548144,
+        "short_chromatid_ratio": 0.6249091078438955,
+        "centromer_position": 25.097628396037276,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\18-0-rotations\\18-0-5.bmp",
+        "bandage_profile": [
+            0.6746218487394958,
+            0.5194749086075109,
+            0.45769753445932826,
+            0.4617254901960784,
+            0.5281889099725912,
+            0.4736479207067442,
+            0.3970780469050365,
+            0.4431749622926094,
+            0.42345399698340874,
+            0.27766884531590413,
+            0.40223061701744917,
+            0.48223981900452484,
+            0.38544494720965305,
+            0.5015378700499807,
+            0.7025882352941176
+        ],
+        "chromosome_area": 1472
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\19-0.bmp": {
+        "nr": "19",
+        "color": [
+            185,
+            185,
+            130
+        ],
+        "chromosome_len": 59.93322466244535,
+        "short_chromatid_ratio": 0.9233987806221764,
+        "centromer_position": 43.90796909924539,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\19-0-rotations\\19-0-5.bmp",
+        "bandage_profile": [
+            0.62061337355455,
+            0.5173202614379084,
+            0.43790849673202614,
+            0.43335099805688043,
+            0.47201076509034984,
+            0.40147058823529413,
+            0.4131082062454612,
+            0.42052821128451384,
+            0.3962384953981593,
+            0.28231942349589406,
+            0.3524340770791075,
+            0.46147230822153423,
+            0.3879738562091503,
+            0.47980392156862745,
+            0.7170868347338936
+        ],
+        "chromosome_area": 1533
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\2-0.bmp": {
+        "nr": "2",
+        "color": [
+            65,
+            65,
+            130
+        ],
+        "chromosome_len": 82.44768183293431,
+        "short_chromatid_ratio": 0.5106012284374098,
+        "centromer_position": 30.17002936015386,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\2-0-rotations\\2-0-165.bmp",
+        "bandage_profile": [
+            0.6777183600713013,
+            0.4490467154603777,
+            0.41604278074866313,
+            0.5730593607305936,
+            0.4071691176470588,
+            0.4394810555801268,
+            0.3462609871534821,
+            0.42133520074696545,
+            0.3365103003226607,
+            0.31138241460106053,
+            0.4055987174744111,
+            0.40042110804053166,
+            0.4841214917339485,
+            0.5054498269896194,
+            0.5661913250148544
+        ],
+        "chromosome_area": 2135
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\20-0.bmp": {
+        "nr": "20",
+        "color": [
+            65,
+            185,
+            185
+        ],
+        "chromosome_len": 57.5338201404803,
+        "short_chromatid_ratio": 0.6348460799946252,
+        "centromer_position": 26.93857601325258,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\20-0-rotations\\20-0-5.bmp",
+        "bandage_profile": [
+            0.6112745098039216,
+            0.5322952710495964,
+            0.38689937513466927,
+            0.3946684291694206,
+            0.4505718954248366,
+            0.47486994797919163,
+            0.4707161125319693,
+            0.483343653250774,
+            0.38129992737835877,
+            0.26432748538011697,
+            0.31967787114845936,
+            0.39375,
+            0.5498539841468503,
+            0.5270588235294118,
+            0.6159822419533851
+        ],
+        "chromosome_area": 1432
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\21-0.bmp": {
+        "nr": "21",
+        "color": [
+            185,
+            185,
+            185
+        ],
+        "chromosome_len": 57.59736696986929,
+        "short_chromatid_ratio": 0.9745620910186183,
+        "centromer_position": 34.80460969196486,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\21-0-rotations\\21-0-155.bmp",
+        "bandage_profile": [
+            0.7049019607843138,
+            0.5883741107062295,
+            0.4370588235294118,
+            0.529367201426025,
+            0.5932837502817219,
+            0.35309496347558633,
+            0.3290879654614139,
+            0.4389452332657201,
+            0.4243862250782666,
+            0.3855983772819473,
+            0.44588639579543154,
+            0.4435635123614663,
+            0.5466590519703026,
+            0.5724697959992078,
+            0.6512307050479766
+        ],
+        "chromosome_area": 1437
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\22-0.bmp": {
+        "nr": "22",
+        "color": [
+            65,
+            185,
+            250
+        ],
+        "chromosome_len": 55.12487586918466,
+        "short_chromatid_ratio": 0.662085781020238,
+        "centromer_position": 23.12669786896619,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\22-0-rotations\\22-0-5.bmp",
+        "bandage_profile": [
+            0.5938997821350763,
+            0.5227886710239651,
+            0.42962962962962964,
+            0.4958085986688254,
+            0.6911410347271438,
+            0.7100965759438104,
+            0.4962962962962963,
+            0.3201511930073234,
+            0.3335836462244472,
+            0.29248689574839837,
+            0.41590825009248983,
+            0.4803097709672104,
+            0.44003921568627447,
+            0.5400379506641366,
+            0.7196514161220043
+        ],
+        "chromosome_area": 1295
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\23-0.bmp": {
+        "nr": "23",
+        "color": [
+            185,
+            185,
+            250
+        ],
+        "chromosome_len": 53.735194832859506,
+        "short_chromatid_ratio": 0.8012254361555249,
+        "centromer_position": 28.20448581751643,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\23-0-rotations\\23-0-10.bmp",
+        "bandage_profile": [
+            0.6635294117647058,
+            0.6121008403361344,
+            0.5702172760996291,
+            0.5363562091503268,
+            0.6359358288770053,
+            0.604227145403616,
+            0.4436432637571157,
+            0.4916135128750295,
+            0.43833245009715593,
+            0.38019607843137254,
+            0.4556372549019608,
+            0.45922009253139456,
+            0.49203170629954107,
+            0.6046439628482971,
+            0.7627450980392156
+        ],
+        "chromosome_area": 1198
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\24-0.bmp": {
+        "nr": "24",
+        "color": [
+            65,
+            250,
+            65
+        ],
+        "chromosome_len": 55.219847692627596,
+        "short_chromatid_ratio": 0.8476346461029151,
+        "centromer_position": 43.393076251072586,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\24-0-rotations\\24-0-140.bmp",
+        "bandage_profile": [
+            0.6680581910183427,
+            0.5543859649122808,
+            0.47767722473604823,
+            0.5117421681316205,
+            0.6023629964806436,
+            0.4545371637026904,
+            0.4088330477822197,
+            0.39649122807017545,
+            0.38629514963880285,
+            0.4066460268317853,
+            0.4156037151702786,
+            0.4702614379084967,
+            0.3905446623093682,
+            0.49631755141080824,
+            0.6120915032679739
+        ],
+        "chromosome_area": 1309
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\25-0.bmp": {
+        "nr": "25",
+        "color": [
+            185,
+            250,
+            65
+        ],
+        "chromosome_len": 53.16947966249658,
+        "short_chromatid_ratio": 0.7665864600317669,
+        "centromer_position": 28.18321006791114,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\25-0-rotations\\25-0-160.bmp",
+        "bandage_profile": [
+            0.7864705882352941,
+            0.6774229691876751,
+            0.5951245363010068,
+            0.5405490196078432,
+            0.5663147310206134,
+            0.5814071510957324,
+            0.4591572799332499,
+            0.45112170994523937,
+            0.3959619491360901,
+            0.3116695221778032,
+            0.4071054164239954,
+            0.43018419489007725,
+            0.4968008255933953,
+            0.5567693744164333,
+            0.6754084967320261
+        ],
+        "chromosome_area": 1277
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\26-0.bmp": {
+        "nr": "26",
+        "color": [
+            65,
+            250,
+            130
+        ],
+        "chromosome_len": 51.00380397518882,
+        "short_chromatid_ratio": 0.9744617430038836,
+        "centromer_position": 49.09086021825713,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\26-0-rotations\\26-0-130.bmp",
+        "bandage_profile": [
+            0.7517345399698341,
+            0.6272981920040743,
+            0.488,
+            0.463029269678886,
+            0.5385805026235846,
+            0.4527077497665733,
+            0.3374254049445865,
+            0.3051353874883287,
+            0.27711124053581826,
+            0.3572815533980582,
+            0.3630718954248366,
+            0.39646574679254415,
+            0.38787469010592746,
+            0.5370295244534595,
+            0.7290441176470588
+        ],
+        "chromosome_area": 1179
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\27-0.bmp": {
+        "nr": "27",
+        "color": [
+            185,
+            250,
+            130
+        ],
+        "chromosome_len": 54.009326469990924,
+        "short_chromatid_ratio": 0.9981793155125963,
+        "centromer_position": 31.48520267134386,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\27-0-rotations\\27-0-165.bmp",
+        "bandage_profile": [
+            0.6530345471521942,
+            0.657843137254902,
+            0.5118279569892473,
+            0.38161539845295916,
+            0.46335152617748127,
+            0.4782627029306346,
+            0.48346207169736577,
+            0.5508295625942684,
+            0.5173163241200094,
+            0.44155100242344125,
+            0.36888045540796965,
+            0.3171750181554103,
+            0.49732236980813826,
+            0.5254445964432285,
+            0.6484429065743944
+        ],
+        "chromosome_area": 1318
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\28-0.bmp": {
+        "nr": "28",
+        "color": [
+            65,
+            250,
+            185
+        ],
+        "chromosome_len": 53.47854470990252,
+        "short_chromatid_ratio": 0.7527095638831363,
+        "centromer_position": 25.50871042680256,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\28-0-rotations\\28-0-170.bmp",
+        "bandage_profile": [
+            0.7394117647058824,
+            0.6237574099407204,
+            0.440444834650278,
+            0.5036923860453272,
+            0.44516268045679813,
+            0.3848153214774282,
+            0.3724000992802184,
+            0.36740196078431375,
+            0.32281797674822144,
+            0.3070428171268508,
+            0.41493930905695614,
+            0.4266587443058031,
+            0.4394652406417112,
+            0.5949384404924761,
+            0.7358101135190918
+        ],
+        "chromosome_area": 1268
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\29-0.bmp": {
+        "nr": "29",
+        "color": [
+            185,
+            250,
+            185
+        ],
+        "chromosome_len": 53.3220546095142,
+        "short_chromatid_ratio": 0.759972638460308,
+        "centromer_position": 28.11757230920911,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\29-0-rotations\\29-0-165.bmp",
+        "bandage_profile": [
+            0.8134453781512605,
+            0.623449920508744,
+            0.5120448179271709,
+            0.3446128967050738,
+            0.4371517027863777,
+            0.5328162034044387,
+            0.5711764705882353,
+            0.5986519607843137,
+            0.5221996844714898,
+            0.3485979337971748,
+            0.3274083546462063,
+            0.40275802628743806,
+            0.5013439083498568,
+            0.5321799307958478,
+            0.6945416004239533
+        ],
+        "chromosome_area": 1311
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\3-0.bmp": {
+        "nr": "3",
+        "color": [
+            185,
+            65,
+            130
+        ],
+        "chromosome_len": 80.21561848563795,
+        "short_chromatid_ratio": 0.5849800663868507,
+        "centromer_position": 31.512749272570165,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\3-0-rotations\\3-0-10.bmp",
+        "bandage_profile": [
+            0.6854901960784314,
+            0.5108248257980879,
+            0.36798212956068505,
+            0.4148053424268258,
+            0.4881749622926093,
+            0.4425952494819066,
+            0.36229484386347127,
+            0.51886767952214,
+            0.5235711305798915,
+            0.35532390171258377,
+            0.5567588624853915,
+            0.5004711962304301,
+            0.4546424452133795,
+            0.4663529411764706,
+            0.5453510436432637
+        ],
+        "chromosome_area": 2028
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\30-0.bmp": {
+        "nr": "30",
+        "color": [
+            65,
+            250,
+            250
+        ],
+        "chromosome_len": 43.555936211142715,
+        "short_chromatid_ratio": 0.9871952641615743,
+        "centromer_position": 27.47319574825127,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\30-0-rotations\\30-0-5.bmp",
+        "bandage_profile": [
+            0.7980392156862746,
+            0.5091503267973857,
+            0.38944636678200695,
+            0.44392156862745097,
+            0.5256684491978609,
+            0.5639344262295082,
+            0.4541947926711668,
+            0.42957516339869284,
+            0.48993110757816644,
+            0.4324219828776581,
+            0.37175410704822465,
+            0.44174053182917,
+            0.5263757115749526,
+            0.47614379084967323,
+            0.5544286680189318
+        ],
+        "chromosome_area": 956
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\31-0.bmp": {
+        "nr": "31",
+        "color": [
+            185,
+            250,
+            250
+        ],
+        "chromosome_len": 46.50768058350807,
+        "short_chromatid_ratio": 0.9510690715998308,
+        "centromer_position": 26.816502428932942,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\31-0-rotations\\31-0-10.bmp",
+        "bandage_profile": [
+            0.7753501400560224,
+            0.5399298792364629,
+            0.4302768166089965,
+            0.41205736025753587,
+            0.45819607843137256,
+            0.543681917211329,
+            0.5740653594771241,
+            0.5522775263951735,
+            0.43643080420574026,
+            0.33706591070163006,
+            0.3863201094391245,
+            0.47615799943165676,
+            0.5307993966817496,
+            0.6189886480908152,
+            0.6687581699346405
+        ],
+        "chromosome_area": 1075
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\32-175.bmp": {
+        "nr": "32",
+        "color": [
+            130,
+            65,
+            65
+        ],
+        "chromosome_len": 44.267738705258914,
+        "short_chromatid_ratio": 0.9550844387190447,
+        "centromer_position": 51.27096500585895,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\32-175-rotations\\32-175-90.bmp",
+        "bandage_profile": [
+            0.8248366013071896,
+            0.5668703845174433,
+            0.450920060331825,
+            0.4849673202614379,
+            0.41465686274509805,
+            0.3257208765859285,
+            0.3822108553566354,
+            0.4229464758876524,
+            0.47931034482758617,
+            0.44029749830966874,
+            0.5045751633986928,
+            0.5198793363499246,
+            0.44880174291938996,
+            0.5236746550472041,
+            0.6808446455505279
+        ],
+        "chromosome_area": 994
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\33-0.bmp": {
+        "nr": "33",
+        "color": [
+            250,
+            65,
+            65
+        ],
+        "chromosome_len": 42.12148014998124,
+        "short_chromatid_ratio": 0.939745434602092,
+        "centromer_position": 43.25747222823718,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\33-0-rotations\\33-0-35.bmp",
+        "bandage_profile": [
+            0.6780518659076534,
+            0.5764705882352941,
+            0.447516339869281,
+            0.506890756302521,
+            0.5293523469994059,
+            0.484593837535014,
+            0.4623023402909551,
+            0.3887380593262946,
+            0.32723981900452487,
+            0.45429864253393665,
+            0.6587216704863764,
+            0.5027652086475616,
+            0.44073748902546095,
+            0.6112667289137877,
+            0.7017783857729138
+        ],
+        "chromosome_area": 988
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\34-10.bmp": {
+        "nr": "34",
+        "color": [
+            130,
+            65,
+            130
+        ],
+        "chromosome_len": 47.78791418979197,
+        "short_chromatid_ratio": 0.6659585550206317,
+        "centromer_position": 21.128271314274897,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\34-10-rotations\\34-10-175.bmp",
+        "bandage_profile": [
+            0.7274509803921568,
+            0.5870081365879685,
+            0.4851186790505676,
+            0.3722655327191117,
+            0.4002723311546841,
+            0.510797385620915,
+            0.6126696832579185,
+            0.5576046634870164,
+            0.40526064084170255,
+            0.34131326949384405,
+            0.3352941176470588,
+            0.3752517223105459,
+            0.49876042370971374,
+            0.6197152833736235,
+            0.6931839402427638
+        ],
+        "chromosome_area": 1141
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\35-0.bmp": {
+        "nr": "35",
+        "color": [
+            250,
+            65,
+            130
+        ],
+        "chromosome_len": 37.055766629262045,
+        "short_chromatid_ratio": 0.953572896414031,
+        "centromer_position": 23.855641466245903,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\35-0-rotations\\35-0-170.bmp",
+        "bandage_profile": [
+            0.6745098039215687,
+            0.5264898116109189,
+            0.34546003016591253,
+            0.3885369532428356,
+            0.4897134238310709,
+            0.48473159755705564,
+            0.45794317727090833,
+            0.45098039215686275,
+            0.3991285403050109,
+            0.3006145741878841,
+            0.29262371615312793,
+            0.2773755656108597,
+            0.2520220588235294,
+            0.45019607843137255,
+            0.6535496957403651
+        ],
+        "chromosome_area": 892
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\36-0.bmp": {
+        "nr": "36",
+        "color": [
+            130,
+            65,
+            185
+        ],
+        "chromosome_len": 40.60222199610505,
+        "short_chromatid_ratio": 0.6496899355849878,
+        "centromer_position": 25.955636430056277,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\36-0-rotations\\36-0-10.bmp",
+        "bandage_profile": [
+            0.6978431372549019,
+            0.5518954248366013,
+            0.5308446455505279,
+            0.46058539357772094,
+            0.3731173628871839,
+            0.4179185520361991,
+            0.49481792717086837,
+            0.49897570968685984,
+            0.396265172735761,
+            0.35130231196956396,
+            0.37061750073163596,
+            0.41316944688323093,
+            0.4680983504512916,
+            0.5687028657616893,
+            0.6879839115133233
+        ],
+        "chromosome_area": 880
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\37-0.bmp": {
+        "nr": "37",
+        "color": [
+            250,
+            65,
+            185
+        ],
+        "chromosome_len": 43.53300395222006,
+        "short_chromatid_ratio": 0.7784382749007047,
+        "centromer_position": 23.069119801044973,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\37-0-rotations\\37-0-15.bmp",
+        "bandage_profile": [
+            0.625686274509804,
+            0.5395424836601308,
+            0.507516339869281,
+            0.5068485365160557,
+            0.443910521955261,
+            0.43749257278669046,
+            0.484123972169513,
+            0.41901692183722805,
+            0.34467571644042233,
+            0.35559577677224735,
+            0.38858131487889275,
+            0.44610492845786964,
+            0.5333927510398098,
+            0.5468502294534836,
+            0.5439446366782007
+        ],
+        "chromosome_area": 935
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\38-0.bmp": {
+        "nr": "38",
+        "color": [
+            130,
+            65,
+            250
+        ],
+        "chromosome_len": 38.437893024871485,
+        "short_chromatid_ratio": 0.6159225397213988,
+        "centromer_position": 22.667069925738254,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\38-0-rotations\\38-0-165.bmp",
+        "bandage_profile": [
+            0.7462745098039216,
+            0.5596949891067539,
+            0.44887436456063906,
+            0.4154868727151878,
+            0.40051430408228866,
+            0.3627106983144135,
+            0.40628930817610065,
+            0.436500754147813,
+            0.3879849812265332,
+            0.41199538638985006,
+            0.4020639834881321,
+            0.39222115075538416,
+            0.5809997238331953,
+            0.5140271493212669,
+            0.5745950554134698
+        ],
+        "chromosome_area": 744
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\39-0.bmp": {
+        "nr": "39",
+        "color": [
+            250,
+            65,
+            250
+        ],
+        "chromosome_len": 34.81421365323051,
+        "short_chromatid_ratio": 0.8790869875424867,
+        "centromer_position": 17.130916288228175,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\39-0-rotations\\39-0-0.bmp",
+        "bandage_profile": [
+            0.602139037433155,
+            0.5345399698340876,
+            0.5599587203302373,
+            0.452562779497764,
+            0.3710061073609772,
+            0.3632040050062578,
+            0.36570907432740535,
+            0.3959001782531194,
+            0.3424509803921569,
+            0.3501256913021619,
+            0.35083514887436457,
+            0.4346281908990011,
+            0.5564455569461827,
+            0.6408963585434173,
+            0.62239651416122
+        ],
+        "chromosome_area": 705
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\4-0.bmp": {
+        "nr": "4",
+        "color": [
+            65,
+            65,
+            185
+        ],
+        "chromosome_len": 82.12398160963365,
+        "short_chromatid_ratio": 0.5215397498632299,
+        "centromer_position": 28.92548012292749,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\4-0-rotations\\4-0-175.bmp",
+        "bandage_profile": [
+            0.7209803921568627,
+            0.5038257080610022,
+            0.35676470588235293,
+            0.44313725490196076,
+            0.5302569303583502,
+            0.38017122341894505,
+            0.3386516250335751,
+            0.3175039358809217,
+            0.33137254901960783,
+            0.38913450730610716,
+            0.3750966079862602,
+            0.45112456747404844,
+            0.43086910439851617,
+            0.5001269572577233,
+            0.6507703081232493
+        ],
+        "chromosome_area": 2037
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\40-0.bmp": {
+        "nr": "40",
+        "color": [
+            130,
+            130,
+            65
+        ],
+        "chromosome_len": 65.62666664575929,
+        "short_chromatid_ratio": 0.8341382648984182,
+        "centromer_position": 34.945194006120026,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\40-0-rotations\\40-0-170.bmp",
+        "bandage_profile": [
+            0.7888888888888889,
+            0.562960306073649,
+            0.40852130325814534,
+            0.40297498309668695,
+            0.4760978771673959,
+            0.5342651912250049,
+            0.5505521748929457,
+            0.46166666666666667,
+            0.32953527867840054,
+            0.36666666666666664,
+            0.39556412729026036,
+            0.436093660765277,
+            0.427382779198636,
+            0.475,
+            0.7061624649859944
+        ],
+        "chromosome_area": 1632
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\41-175.bmp": {
+        "nr": "41",
+        "color": [
+            250,
+            130,
+            65
+        ],
+        "chromosome_len": 17.25274910275822,
+        "short_chromatid_ratio": 0.7815703547390553,
+        "centromer_position": 10.082875041860339,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\41-175-rotations\\41-175-160.bmp",
+        "bandage_profile": [
+            0.7490196078431373,
+            0.6840958605664489,
+            0.6446078431372549,
+            0.6399999999999999,
+            0.703641456582633,
+            0.6588235294117647,
+            0.5818181818181819,
+            0.49233511586452766,
+            0.4179738562091503,
+            0.3977124183006536,
+            0.36666666666666664,
+            0.4403921568627451,
+            0.510239651416122,
+            0.6427015250544662,
+            0.7279411764705882
+        ],
+        "chromosome_area": 154
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\5-0.bmp": {
+        "nr": "5",
+        "color": [
+            185,
+            65,
+            185
+        ],
+        "chromosome_len": 78.11949408670803,
+        "short_chromatid_ratio": 0.5946054029340747,
+        "centromer_position": 30.300213406645756,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\5-0-rotations\\5-0-170.bmp",
+        "bandage_profile": [
+            0.7000852514919012,
+            0.5128998968008256,
+            0.4220231138813141,
+            0.6169398907103825,
+            0.5634693517046458,
+            0.5847058823529412,
+            0.48522875816993466,
+            0.46886877828054296,
+            0.43201719043781894,
+            0.41363337281221213,
+            0.4180392156862745,
+            0.45726038667215135,
+            0.502734427104175,
+            0.5405525846702317,
+            0.6999215686274509
+        ],
+        "chromosome_area": 1885
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\6-0.bmp": {
+        "nr": "6",
+        "color": [
+            65,
+            65,
+            250
+        ],
+        "chromosome_len": 78.37983939634485,
+        "short_chromatid_ratio": 0.8195443661889239,
+        "centromer_position": 35.57060780394463,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\6-0-rotations\\6-0-5.bmp",
+        "bandage_profile": [
+            0.6830948595654478,
+            0.5309742647058824,
+            0.35598815065594586,
+            0.441352063213345,
+            0.42467320261437913,
+            0.375024335975525,
+            0.5625725490196078,
+            0.4214808311384255,
+            0.38086392451717527,
+            0.40748893105629347,
+            0.35916508538899433,
+            0.5196078431372549,
+            0.37855307640297503,
+            0.5098334070470294,
+            0.6391067538126362
+        ],
+        "chromosome_area": 1905
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\7-175.bmp": {
+        "nr": "7",
+        "color": [
+            185,
+            65,
+            250
+        ],
+        "chromosome_len": 90.86033803699812,
+        "short_chromatid_ratio": 0.6859471161927312,
+        "centromer_position": 38.26683974644688,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\7-175-rotations\\7-175-5.bmp",
+        "bandage_profile": [
+            0.6606334841628959,
+            0.476644108971022,
+            0.4545813293871007,
+            0.5580392156862746,
+            0.4769834087481146,
+            0.4298507462686567,
+            0.5939422923641001,
+            0.4966666666666667,
+            0.3507814720090935,
+            0.4333188090050835,
+            0.465828468792097,
+            0.3641379310344827,
+            0.4586994291387441,
+            0.43724287260916633,
+            0.5918738629472408
+        ],
+        "chromosome_area": 2018
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\8-0.bmp": {
+        "nr": "8",
+        "color": [
+            65,
+            130,
+            65
+        ],
+        "chromosome_len": 77.16358500577397,
+        "short_chromatid_ratio": 0.745629537551521,
+        "centromer_position": 33.806156786937,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\8-0-rotations\\8-0-170.bmp",
+        "bandage_profile": [
+            0.6666666666666666,
+            0.5462831286360699,
+            0.41754901960784313,
+            0.4381874701099952,
+            0.3622377622377623,
+            0.4488307915758896,
+            0.5624848169356239,
+            0.4466551326412918,
+            0.393343653250774,
+            0.39110932044050495,
+            0.39880534995455136,
+            0.5064496238747072,
+            0.4635194205070563,
+            0.4741805118994163,
+            0.5970453934998656
+        ],
+        "chromosome_area": 2065
+    },
+    "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\9-0.bmp": {
+        "nr": "9",
+        "color": [
+            185,
+            130,
+            65
+        ],
+        "chromosome_len": 74.12976916123004,
+        "short_chromatid_ratio": 0.6726061641238315,
+        "centromer_position": 32.94318595152992,
+        "best_image_path": "F:\\GIT\\MasterThesisApp\\KaryPy\\__disertation_experiments\\dataset\\3\\3\\contrast_split\\straight\\9-0-rotations\\9-0-5.bmp",
+        "bandage_profile": [
+            0.6909803921568627,
+            0.557579185520362,
+            0.4380071525465532,
+            0.44898065186339436,
+            0.5494274509803923,
+            0.4947712418300654,
+            0.42618496217384594,
+            0.3826203208556149,
+            0.4283721542308198,
+            0.34152327597705745,
+            0.4130718954248366,
+            0.6320572673513849,
+            0.5060592658115878,
+            0.48185888528639803,
+            0.5990772779700115
+        ],
+        "chromosome_area": 1950
+    }
+}

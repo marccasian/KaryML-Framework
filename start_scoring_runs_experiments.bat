@@ -1,0 +1,1 @@
+py -3 ./__disertation_experiments/automation/evaluation.py
