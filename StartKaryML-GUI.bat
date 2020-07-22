@@ -1,1 +1,1 @@
-py -3 ./GUI/pyforms_test.py
+py -3 ./GUI/KaryMl_UI.py
