@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import List
 
 from a_Common.constants import *
 
@@ -20,10 +19,11 @@ class RunInstance:
     USED_FEATURES_COLUMN_NAME = "used_features"  # 0x01 len, 0x02 - centromere, 0x04 banding, 0x08 area
     DISTANCE_COLUMN_NAME = "distance"  # euclidean, weighted - euclidean, manhattan
     LEN_FEATURE_WEIGHT_COLUMN_NAME = "len_feature_weight"  # weight for len feature
-    SHORT_CHROMATID_RATIO_FEATURE_WEIGHT_COLUMN_NAME = "short_chromatid_ratio_feature_weight"  # weight centromere feature
+    SHORT_CHROMATID_RATIO_FEATURE_WEIGHT_COLUMN_NAME = "short_chromatid_ratio_feature_weight"# weight centromere feature
     BANDING_PATTERN_FEATURE_WEIGHTS_COLUMN_NAME = "banding_pattern_feature_weights"  # weights banding pattern feature
     AREA_FEATURE_WEIGHT_COLUMN_NAME = "area_feature_weight"  # weight for area feature
-    INITIAL_NEURONS_FILE_COLUMN_NAME = "used_neurons_file"  # initial model configuration (either existing one, meaning that the model starts from a given config, either the initial neurons of the model will be saved
+    INITIAL_NEURONS_FILE_COLUMN_NAME = "used_neurons_file"  # initial model configuration (either existing one,
+    meaning that the model starts from a given config, either the initial neurons of the model will be saved
     into this file)
     EPOCHS_COLUMN_NAME = "epochs"  # number of training epochs for the model
     ROWS_COLUMN_NAME = "rows"
@@ -40,12 +40,12 @@ class RunInstance:
                  used_features: int, distance: str, epochs: int, rows: int, cols: int,
                  model_output_file_path: str = "", dist_matrix_file_path: str = "",
                  generated_karyotype_image_path: str = "",
-                 preckar: float = None, id: int = None,
+                 preckar: float = None, identifier: int = None,
                  start_time: str = datetime.strftime(datetime.now(), DB_DATETIME_STR_FORMAT), end_time: str = None,
                  len_feature_weight: float = None, short_chromatid_ratio_feature_weight: float = None,
                  banding_pattern_feature_weights: float = None,
                  area_feature_weight: float = None, initial_neurons_file: str = None):
-        self.id = id
+        self.id = identifier
         self.start_time = start_time
         self.end_time = end_time
         self.classifier_type = classifier_type
@@ -84,9 +84,10 @@ class RunInstance:
     def __str__(self):
         return "RunInstance:{} [\n\tstart_time={}\n\tend_time={}\n\tinput_image_path={}\n\tfeatures_file_path={}\n\t" \
                "classifier_type={}\n\tused_features={}\n\tdistance={}\n\tlen_feature_weight={}\n\t" \
-               "short_chromatid_ratio_feature_weight={}\n\tbanding_pattern_feature_weights={}\n\tarea_feature_weight={}" \
-               "\n\tinitial_neurons_file={}\n\tepochs={}\n\trows={}\n\tcols={}\n\tmodel_output_file_path={}\n\t" \
-               "dist_matrix_file_path={}\n\tgenerated_karyotype_image_path={}\n\tpreckar={}\n]" \
+               "short_chromatid_ratio_feature_weight={}\n\tbanding_pattern_feature_weights={}\n\t" \
+               "area_feature_weight={}\n\tinitial_neurons_file={}\n\tepochs={}\n\trows={}\n\tcols={}\n\t" \
+               "model_output_file_path={}\n\tdist_matrix_file_path={}\n\tgenerated_karyotype_image_path={}\n\t" \
+               "preckar={}\n]" \
             .format(self.id, self.start_time, self.end_time, self.input_image_path, self.features_file_path,
                     self.classifier_type, self.used_features, self.distance, self.len_feature_weight,
                     self.short_chromatid_ratio_feature_weight, self.banding_pattern_feature_weights,

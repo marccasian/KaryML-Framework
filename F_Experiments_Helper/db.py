@@ -1,6 +1,5 @@
 import os
 import sqlite3
-import sys
 import traceback
 from sqlite3 import Error
 from F_Experiments_Helper.run_instance import RunInstance
@@ -158,18 +157,19 @@ def delete_run(run_instance: RunInstance):
 def update_run_entry(run_instance: RunInstance):
     conn = create_connection(DB_FILE)
     with conn:
-        sql = ''' UPDATE run SET {} = ?, {} = ? , {} = ? , {} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ?, {} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ? WHERE {} = ?'''. \
-            format(START_TIME_COLUMN_NAME, END_TIME_COLUMN_NAME, CLASSIFIER_TYPE_COLUMN_NAME,
-                   INPUT_IMAGE_PATH_COLUMN_NAME, FEATURES_FILE_PATH_COLUMN_NAME,
-                   USED_FEATURES_COLUMN_NAME, DISTANCE_COLUMN_NAME,
-                   LEN_FEATURE_WEIGHT_COLUMN_NAME,
-                   SHORT_CHROMATID_RATIO_FEATURE_WEIGHT_COLUMN_NAME,
-                   BANDING_PATTERN_FEATURE_WEIGHTS_COLUMN_NAME,
-                   AREA_FEATURE_WEIGHT_COLUMN_NAME, INITIAL_NEURONS_FILE_COLUMN_NAME,
-                   EPOCHS_COLUMN_NAME, ROWS_COLUMN_NAME, COLS_COLUMN_NAME,
-                   MODEL_OUTPUT_FILE_PATH_COLUMN_NAME, DIST_MATRIX_FILE_PATH_COLUMN_NAME,
-                   GENERATED_KARYOTYPE_IMAGE_PATH_COLUMN_NAME, PRECKAR_COLUMN_NAME,
-                   ID_COLUMN_NAME)
+        sql = '''UPDATE run SET {} = ?, {} = ? , {} = ? , {} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ? ,
+        {} = ? ,{} = ?, {} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ? ,{} = ? WHERE {} = ?''' \
+            .format(START_TIME_COLUMN_NAME, END_TIME_COLUMN_NAME, CLASSIFIER_TYPE_COLUMN_NAME,
+                    INPUT_IMAGE_PATH_COLUMN_NAME, FEATURES_FILE_PATH_COLUMN_NAME,
+                    USED_FEATURES_COLUMN_NAME, DISTANCE_COLUMN_NAME,
+                    LEN_FEATURE_WEIGHT_COLUMN_NAME,
+                    SHORT_CHROMATID_RATIO_FEATURE_WEIGHT_COLUMN_NAME,
+                    BANDING_PATTERN_FEATURE_WEIGHTS_COLUMN_NAME,
+                    AREA_FEATURE_WEIGHT_COLUMN_NAME, INITIAL_NEURONS_FILE_COLUMN_NAME,
+                    EPOCHS_COLUMN_NAME, ROWS_COLUMN_NAME, COLS_COLUMN_NAME,
+                    MODEL_OUTPUT_FILE_PATH_COLUMN_NAME, DIST_MATRIX_FILE_PATH_COLUMN_NAME,
+                    GENERATED_KARYOTYPE_IMAGE_PATH_COLUMN_NAME, PRECKAR_COLUMN_NAME,
+                    ID_COLUMN_NAME)
         conn.execute(sql, run_instance.get_update_tuple())
         conn.commit()
 
@@ -191,7 +191,7 @@ def get_all_runs(what="*", criteria=""):
 
 def get_run_instance_obj_from_db_entry(i):
     return RunInstance(
-        id=i[ID_COLUMN_INDEX], start_time=i[START_TIME_COLUMN_INDEX], end_time=i[END_TIME_COLUMN_INDEX],
+        identifier=i[ID_COLUMN_INDEX], start_time=i[START_TIME_COLUMN_INDEX], end_time=i[END_TIME_COLUMN_INDEX],
         classifier_type=i[CLASSIFIER_TYPE_COLUMN_INDEX], input_image_path=i[INPUT_IMAGE_PATH_COLUMN_INDEX],
         features_file_path=i[FEATURES_FILE_PATH_COLUMN_INDEX], used_features=i[USED_FEATURES_COLUMN_INDEX],
         distance=i[DISTANCE_COLUMN_INDEX], len_feature_weight=i[LEN_FEATURE_WEIGHT_COLUMN_INDEX],
@@ -210,13 +210,13 @@ def get_best_run_so_far_with_similar_input(run_instance: RunInstance, logger=Non
     conn = create_connection(DB_FILE)
     run = None
     with conn:
-        # conn.set_trace_callback(print)
         try:
             cur = conn.cursor()
-            sql = "SELECT * FROM run WHERE {} = ? and {} = ? and {} = ? and {} = ? and {} = ? and {} = ? and {} = ? ".format(
-                CLASSIFIER_TYPE_COLUMN_NAME, INPUT_IMAGE_PATH_COLUMN_NAME,
-                FEATURES_FILE_PATH_COLUMN_NAME, USED_FEATURES_COLUMN_NAME, DISTANCE_COLUMN_NAME, ROWS_COLUMN_NAME,
-                COLS_COLUMN_NAME)
+            sql = "SELECT * FROM run WHERE {} = ? and {} = ? and {} = ? and {} = ? and {} = ? and {} = ? and {} = ? " \
+                .format(CLASSIFIER_TYPE_COLUMN_NAME, INPUT_IMAGE_PATH_COLUMN_NAME,
+                        FEATURES_FILE_PATH_COLUMN_NAME, USED_FEATURES_COLUMN_NAME, DISTANCE_COLUMN_NAME,
+                        ROWS_COLUMN_NAME,
+                        COLS_COLUMN_NAME)
             bindings = [run_instance.classifier_type, run_instance.input_image_path,
                         run_instance.features_file_path,
                         run_instance.used_features, run_instance.distance, run_instance.rows, run_instance.cols]
@@ -254,7 +254,6 @@ def get_best_run_so_far_with_similar_input(run_instance: RunInstance, logger=Non
             print(msg)
             if logger:
                 logger.warning(msg)
-        # conn.set_trace_callback(None)
     return run
 
 
@@ -262,12 +261,11 @@ def get_similar_runs(run_instance: RunInstance, over_id=None):
     conn = create_connection(DB_FILE)
     runs = list()
     with conn:
-        # conn.set_trace_callback(print)
         try:
             cur = conn.cursor()
-            sql = "SELECT * FROM run WHERE {} = ? and {} = ? and {} = ? and {} = ? and {} = ? and {} = ? and {} = ? ".format(
-                CLASSIFIER_TYPE_COLUMN_NAME, INPUT_IMAGE_PATH_COLUMN_NAME, FEATURES_FILE_PATH_COLUMN_NAME,
-                USED_FEATURES_COLUMN_NAME, DISTANCE_COLUMN_NAME, ROWS_COLUMN_NAME, COLS_COLUMN_NAME)
+            sql = "SELECT * FROM run WHERE {} = ? and {} = ? and {} = ? and {} = ? and {} = ? and {} = ? and {} = ? " \
+                .format(CLASSIFIER_TYPE_COLUMN_NAME, INPUT_IMAGE_PATH_COLUMN_NAME, FEATURES_FILE_PATH_COLUMN_NAME,
+                        USED_FEATURES_COLUMN_NAME, DISTANCE_COLUMN_NAME, ROWS_COLUMN_NAME, COLS_COLUMN_NAME)
             bindings = [run_instance.classifier_type, run_instance.input_image_path, run_instance.features_file_path,
                         run_instance.used_features, run_instance.distance, run_instance.rows, run_instance.cols]
             if over_id:
@@ -304,21 +302,18 @@ def get_similar_runs(run_instance: RunInstance, over_id=None):
             msg = "Exception while searching for best_run_so_far_with_similar_input. Traceback: {}".format(
                 traceback.format_exc())
             print(msg)
-        # conn.set_trace_callback(None)
     return runs
 
 
 def how_many_similar_input_runs_so_far(run_instance: RunInstance, logger=None, over_id=None):
     conn = create_connection(DB_FILE)
-    run = None
     with conn:
-        # conn.set_trace_callback(print)
         try:
             cur = conn.cursor()
-            sql = "SELECT count(*) FROM run WHERE {} = ? and {} = ? and {} = ? and {} = ? and {} = ? and {} = ? and {} = ? ".format(
-                CLASSIFIER_TYPE_COLUMN_NAME, INPUT_IMAGE_PATH_COLUMN_NAME,
-                FEATURES_FILE_PATH_COLUMN_NAME, USED_FEATURES_COLUMN_NAME, DISTANCE_COLUMN_NAME, ROWS_COLUMN_NAME,
-                COLS_COLUMN_NAME)
+            sql = "SELECT count(*) FROM run WHERE {} = ? and {} = ? and {} = ? and {} = ? and {} = ? and {} = ? " \
+                  "and {} = ? ".format(CLASSIFIER_TYPE_COLUMN_NAME, INPUT_IMAGE_PATH_COLUMN_NAME,
+                                       FEATURES_FILE_PATH_COLUMN_NAME, USED_FEATURES_COLUMN_NAME, DISTANCE_COLUMN_NAME,
+                                       ROWS_COLUMN_NAME, COLS_COLUMN_NAME)
             bindings = [run_instance.classifier_type, run_instance.input_image_path,
                         run_instance.features_file_path, run_instance.used_features, run_instance.distance,
                         run_instance.rows, run_instance.cols]
@@ -358,15 +353,10 @@ def how_many_similar_input_runs_so_far(run_instance: RunInstance, logger=None, o
             print(msg)
             if logger:
                 logger.warning(msg)
-            # conn.set_trace_callback(None)
             return 0
 
 
 def test_get_best_similar_run():
-    '''
-    6	93.843548674743	15	__disertation_experiments\dataset\5\5.bmp	__disertation_experiments\dataset\5\inputs\features_15.txt	0.3	0.1	0.3	0.3	FSOM	Weighted Euclidean
-    :return:
-    '''
     rr = RunInstance(
         classifier_type=FSOM_CLASSIFIER_TYPE,
         input_image_path=r"__disertation_experiments\dataset\5\5.bmp",
