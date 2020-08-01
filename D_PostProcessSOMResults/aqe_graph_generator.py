@@ -1,5 +1,4 @@
 from matplotlib import pyplot as plt
-from matplotlib.axes import Axes
 
 
 class Graph2D:
@@ -19,7 +18,6 @@ class Graph2D:
         plt.plot(self.x_list, self.y_list, '-')
         plt.savefig("aqe.png")
         print("aici")
-        # plt.hold()
 
     def __load_data_from_file(self):
         with open(self._aqe_data_file, "r") as f:
@@ -31,8 +29,3 @@ class Graph2D:
                     value = float(value_s.strip())
                     self.x_list.append(epoch)
                     self.y_list.append(value)
-
-
-if __name__ == "__main__":
-    obj = Graph2D(r'D:\GIT\Karyotyping-Project\PythonProject\D_PostProcessSOMResults\good_aqw_1.txt')
-    obj.generate()

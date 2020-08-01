@@ -40,7 +40,7 @@ class AccuracyCalculator:
                         dist = float(elem.strip())
                         current_dist_matrix_line.append(dist)
                     if len(current_dist_matrix_line) == 0:
-                        # avoid blank lines
+                        # skip blank lines
                         continue
                     if len(current_dist_matrix_line) != m:
                         raise ValueError("Invalid file format!")
@@ -109,11 +109,6 @@ class AccuracyCalculator:
             self.chromosomes_matching_lists.append(self.__get_chromosome_matching_list(i))
 
     def __get_chromosome_matching_list(self, ch_index):
-        """
-
-        :param ch_index:
-        :return:
-        """
         a = sorted(range(len(self.dist_matrix[ch_index])), key=lambda x: self.dist_matrix[ch_index][x])
         a.remove(ch_index)
         return a
@@ -136,8 +131,8 @@ def init_logger():
     return current_logger
 
 
-def compute_accuracy(pairs_file=r'D:\GIT\Karyotyping-Project\PythonProject\Z_Images\kar-segm\1_test_1apr\pairs.txt',
-                     dist_matrix_file=r'D:\GIT\Karyotyping-Project\PythonProject\D_PostProcessSOMResults\13_mai_all_features_37.txt.out_dist_matrix.txt',
+def compute_accuracy(pairs_file,
+                     dist_matrix_file,
                      features_file="",
                      neurons_file="",
                      deserialize=False,
@@ -152,64 +147,34 @@ def compute_accuracy(pairs_file=r'D:\GIT\Karyotyping-Project\PythonProject\Z_Ima
         acc_file = os.path.join(acc_dir, '%s.acc' % (datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')))
     if not os.path.exists(acc_dir):
         os.makedirs(acc_dir)
-    # obj = AccuracyCalculator(
-    #     r'D:\GIT\Karyotyping-Project\PythonProject\Z_Images\kar-segm\1_test_1apr\pairs.txt',
-    #     r'D:\GIT\Karyotyping-Project\PythonProject\D_PostProcessSOMResults\13_mai_all_features.txt.out_dist_matrix.txt')
-    # obj = AccuracyCalculator(
-    #     r'D:\GIT\Karyotyping-Project\PythonProject\Z_Images\kar-segm\1_test_1apr\pairs.txt',
-    #     r'D:\GIT\Karyotyping-Project\PythonProject\D_PostProcessSOMResults\som_output_24_04_2.out_dist_matrix.txt')
-    # obj = AccuracyCalculator(
-    #     r'D:\GIT\Karyotyping-Project\PythonProject\Z_Images\kar-segm\1_test_1apr\pairs.txt',
-    #     r'D:\GIT\Karyotyping-Project\PythonProject\D_PostProcessSOMResults\to_extract_features_test.txt.out_dist_matrix.txt')
+
     obj.get_accuracy()
-    # print('\n'.join([str(i) for i in enumerate(obj.normal_scale_accuracy)]))
-    # print("AVG = %s" % str(sum(obj.normal_scale_accuracy) / float(len(obj.normal_scale_accuracy))))
     with open(acc_file, 'w') as f:
-        print('\n'.join([str(i) for i in obj.pairs]))
-        logger.info('\n'.join([str(i) for i in obj.pairs]))
-        f.write('\n'.join([str(i) for i in obj.pairs]))
-
-        print("=============================")
-        logger.info("=============================")
-        f.write("=============================\n")
-
-        print('\n'.join([str(i) for i in enumerate(obj.chromosomes_matching_lists)]))
-        logger.info('\n'.join([str(i) for i in enumerate(obj.chromosomes_matching_lists)]))
-        f.write('\n'.join([str(i) for i in enumerate(obj.chromosomes_matching_lists)]))
-
-        print("=============================")
-        logger.info("=============================")
-        f.write("=============================\n")
-
-        print('\n'.join([str(i) for i in enumerate(obj.exponential_scale_accuracy)]))
-        logger.info('\n'.join([str(i) for i in enumerate(obj.exponential_scale_accuracy)]))
-        f.write('\n'.join([str(i) for i in enumerate(obj.exponential_scale_accuracy)]))
+        __triple_log_msg('\n'.join([str(i) for i in obj.pairs]), f, logger)
+        __triple_log_msg("=============================\n", f, logger)
+        __triple_log_msg('\n'.join([str(i) for i in enumerate(obj.chromosomes_matching_lists)]), f, logger)
+        __triple_log_msg("=============================\n", f, logger)
+        __triple_log_msg('\n'.join([str(i) for i in enumerate(obj.exponential_scale_accuracy)]), f, logger)
 
         preckar = sum(obj.exponential_scale_accuracy) / float(len(obj.exponential_scale_accuracy))
         avg_str = str(preckar)
-        print("AVG = %s" % avg_str)
-        logger.info("AVG = %s" % avg_str)
-        f.write("neurons file: %s\n" % neurons_file)
-        logger.info("neurons file: %s\n" % neurons_file)
-        f.write("features file: %s\n" % features_file)
-        logger.info("features file: %s\n" % features_file)
-        f.write("deserialize: %s\n" % str(deserialize))
-        logger.info("deserialize: %s\n" % str(deserialize))
-        f.write("AVG = %s\n" % avg_str)
+        __triple_log_msg("neurons file: %s\n" % neurons_file, f, logger)
+        __triple_log_msg("features file: %s\n" % features_file, f, logger)
+        __triple_log_msg("deserialize: %s\n" % str(deserialize), f, logger)
+        __triple_log_msg("AVG = %s\n" % avg_str, f, logger)
         if os.path.exists(neurons_file) and os.path.exists(features_file) and not deserialize and timestamp_str is None:
             try:
                 os.rename(neurons_file, features_file + "_%s.neurons" % avg_str.replace(".", "_"))
-                f.write("Successfully_ renamed neurons file")
-                logger.info("Successfully_ renamed neurons file")
+                __triple_log_msg("Successfully_ renamed neurons file", f, logger)
             except:
-                f.write("Failed to rename neurons file using os.rename to features_file_path_acc.neurons, "
-                        "will try to add current date_time to neurons file name")
-                logger.info("Failed to rename neurons file using os.rename to features_file_path_acc.neurons, "
-                            "will try to add current date_time to neurons file name")
+                __triple_log_msg("Failed to rename neurons file using os.rename to features_file_path_acc.neurons, "
+                                 "will try to add current date_time to neurons file name", f, logger)
                 os.rename(neurons_file, features_file + "_%s_%s.neurons"
                           % (avg_str.replace(".", "_"), datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')))
         return preckar
 
 
-if __name__ == "__main__":
-    compute_accuracy()
+def __triple_log_msg(msg, f, logger):
+    print(msg)
+    logger.info(msg)
+    f.write(msg)

@@ -37,7 +37,6 @@ class KaryotypeImageGenerator:
             if len(k_entry) > self.__nr_of_columns:
                 self.__nr_of_columns = len(k_entry)
             for ch in k_entry:
-                # print(ch.image_obj.shape)
                 if not os.path.exists(ch.ch_img_path):
                     return
                 h, w, _ = ch.image_obj.shape
@@ -58,14 +57,7 @@ class KaryotypeImageGenerator:
                 if not os.path.exists(ch.ch_img_path):
                     return
                 print(ch.image_obj.shape)
-                # print("curent i = %d" % current_i)
-                # print("curent j = %d" % current_j)
                 h, w, _ = ch.image_obj.shape
-                # print("curent h = %d" % h)
-                # print("curent w = %d" % w)
-                # print("curent curent_i + h = %d" % (current_i+h))
-                # print("curent curent_j + w = %d" % (current_j+w))
-                # print((self.__karyotype_image[np.ix_([current_i, current_i + h],[current_j, current_j + w])]).shape)
                 self.__karyotype_image[current_i:current_i + h, current_j:current_j + w] = ch.image_obj
                 current_j += self.__max_w
             current_i += self.__max_h

@@ -63,6 +63,6 @@ class ExpectedKaryotype:
 
 
 if __name__ == '__main__':
-    k = ExpectedKaryotype(r"__disertation_experiments\dataset\6\6_expected_karyotype.txt")
+    k = ExpectedKaryotype(r"..\__disertation_experiments\dataset\6\6_expected_karyotype.txt")
     k.load()
-    k.get_pair_id(122)
+    k.get_pair_id(1)

@@ -1,7 +1,7 @@
 n = <nr_of_chromosomes>
-n linii, caracterizand fiecare cromozom astfel:
-    <id-ul dat de segmentare>;<red>:<green>:<blue>;<path to chromosome>;<center of bmu_x>;<center of bmu_y>
+n lines, describing each chromosome as:
+    <id obtained during segmentation step>;<R>:<G>:<B>;<path to chromosome>;<center of bmu_x>;<center of bmu_y>
 m = <nr of  neurons in som>
 w;h <of som>
-m linii, caracterizand fiecare neuron din som
-    <neuron id>;<matrix_line>;<matrix_col>;<red>:<green>:<blue>;<neuron_center_x>;<neuron_center_x>
+m lines describing each neuron in the som
+    <neuron id>;<matrix_line>;<matrix_col>;<R>:<G>:<B>;<neuron_center_x>;<neuron_center_x>

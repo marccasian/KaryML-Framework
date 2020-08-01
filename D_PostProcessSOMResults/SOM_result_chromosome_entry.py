@@ -1,8 +1,5 @@
 class SOMChromosomeResultEntry:
     def __init__(self, ch_id, color_RGB, ch_img_path, x, y):
-        """
-        0;65:65:65;D:\GIT\Karyotyping-Project\PythonProject\Z_Images\kar-segm\1_test_1apr\to_extract\0.bmp;256.0;220.0
-        """
         self.ch_id = ch_id
         self.rgb_tuple = color_RGB
         self.ch_img_path = ch_img_path

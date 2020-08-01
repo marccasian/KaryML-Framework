@@ -9,6 +9,12 @@ from D_PostProcessSOMResults.expected_karyotype_loader import ExpectedKaryotype
 
 
 class SOMResultsV2:
+    POINTS_MATRIX = [
+        [(-1, -1), (-1, 0), (-1, 1)],
+        [(0, -1), (0, 0), (0, 1)],
+        [(1, -1), (1, 0), (1, 1)]
+    ]
+
     def __init__(self, results_file_path):
         self.results_file_path = results_file_path
         self.__dist_matrix_file = results_file_path[:-4] + DIST_MATRIX_FILE_SUFFIX
@@ -17,7 +23,7 @@ class SOMResultsV2:
         self.number_of_chromosomes = self.result_loader.number_of_chromosomes
         self.number_of_neurons = self.result_loader.number_of_neurons
         self.extended_map = list()
-        self.full_map = list()
+        self.full_map = list()  # a map containing som neurons
         self.ch_dist_matrix = list()
         self.karyotype = list()
 
@@ -40,17 +46,9 @@ class SOMResultsV2:
 
         :return: None, but self.extended_map is generated
         """
-        points_matrix = [
-            [(-1, -1), (-1, 0), (-1, 1)],
-            [(0, -1), (0, 0), (0, 1)],
-            [(1, -1), (1, 0), (1, 1)]
-        ]
         self.extended_map = [
-            [
-                None
-                for _ in range(len(points_matrix[0]) * self.result_loader.som_matrix_width)
-            ]
-            for _ in range(len(points_matrix) * self.result_loader.som_matrix_height)
+            [None for _ in range(len(self.POINTS_MATRIX[0]) * self.result_loader.som_matrix_width)]
+            for _ in range(len(self.POINTS_MATRIX) * self.result_loader.som_matrix_height)
         ]
 
         for i in range(len(self.extended_map)):
@@ -60,25 +58,15 @@ class SOMResultsV2:
                 i_sign_index = i // self.result_loader.som_matrix_height
                 j_sign_index = j // self.result_loader.som_matrix_width
                 current_neuron = self.full_map[normalized_i_neuron_index][normalized_j_neuron_index]
-                new_x = current_neuron.x + (points_matrix[i_sign_index][j_sign_index][0]) * self.result_loader.som_width
-                new_y = current_neuron.y + (
-                    points_matrix[i_sign_index][j_sign_index][
-                        0]) * self.result_loader.som_height
-                new_neuron = SOM_result_neuron_entry.SOMNeuronResultEntry(
-                    current_neuron.neuron_id,
-                    i,
-                    j,
-                    current_neuron.rgb_tuple,
-                    new_x,
-                    new_y
-                )
+                new_x = \
+                    current_neuron.x + self.POINTS_MATRIX[i_sign_index][j_sign_index][0] * self.result_loader.som_width
+                new_y = \
+                    current_neuron.y + self.POINTS_MATRIX[i_sign_index][j_sign_index][0] * self.result_loader.som_height
+                new_neuron = SOM_result_neuron_entry.SOMNeuronResultEntry(current_neuron.neuron_id, i, j,
+                                                                          current_neuron.rgb_tuple, new_x, new_y)
                 self.extended_map[i][j] = new_neuron
 
     def compute_maps(self):
-        """
-        self.full_map a map containing som neurons
-        :return:
-        """
         self.full_map = [[0 for _ in range(self.result_loader.som_matrix_width + 1)] for _ in
                          range(self.result_loader.som_matrix_height + 1)]
         for entry in self.som_neurons:
@@ -92,24 +80,22 @@ class SOMResultsV2:
                     break
             else:
                 print("[ERROR] Can't find matching neuron for chromosome: %s" % chromosome)
-        # self.extended_map = [[self.full_map for _ in range(3)] for _ in range(3)]
         self.__compute_extended_map()
 
     def __get_lee_distances_for_neuron(self, ch1):
         """
-        distanta vafi calculata pe extended map
+        Distance will be computed using extended map
 
         :param ch1: SOMChromosomeResultEntry Object (ch_id, color_RGB, ch_img_path, x, y)
-
-        SOMNeuronResultEntry(neuron_id, matrix_x_coord, matrix_y_coord, color_RGB, x, y, value)
-        :return: distanta minima dintre ch1 si ch2, tinand cont de culorile de pe harta ( folosind lee)
+                    SOMNeuronResultEntry(neuron_id, matrix_x_coord, matrix_y_coord, color_RGB, x, y, value)
+        :return: Minimum distance between ch1 and ch2, with respect to map values using lee algorithm
         """
         dist_matrix = [
             [-1 for _ in range(len(self.extended_map[0]))]
             for _ in range(len(self.extended_map))
         ]
-        dist_matrix[ch1.matrix_x_coord][ch1.matrix_y_coord] = self.extended_map[ch1.matrix_x_coord][
-            ch1.matrix_y_coord].value
+        dist_matrix[ch1.matrix_x_coord][ch1.matrix_y_coord] = \
+            self.extended_map[ch1.matrix_x_coord][ch1.matrix_y_coord].value
         points = [(ch1.matrix_x_coord, ch1.matrix_y_coord)]
         min_i = self.extended_map[0][0].matrix_x_coord
         min_j = self.extended_map[0][0].matrix_y_coord
@@ -120,18 +106,14 @@ class SOMResultsV2:
             points = points[1:]
             i = point[0]
             j = point[1]
-            # n_i - neighbour_i
-            # n_j - neighbour_j
             for (n_i_coord, n_j_coord) in [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]:
-                n_i = i + n_i_coord
-                n_j = j + n_j_coord
+                n_i = i + n_i_coord  # neighbour_i
+                n_j = j + n_j_coord  # neighbour_j
                 if min_i <= n_i <= max_i and min_j <= n_j <= max_j:
                     if (dist_matrix[n_i][n_j] == -1) or \
-                            dist_matrix[n_i][n_j] \
-                            > dist_matrix[i][j] + self.extended_map[n_i][n_j].value:
+                            dist_matrix[n_i][n_j] > dist_matrix[i][j] + self.extended_map[n_i][n_j].value:
                         points.append((n_i, n_j))
-                        dist_matrix[n_i][n_j] = \
-                            dist_matrix[i][j] + self.extended_map[n_i][n_j].value
+                        dist_matrix[n_i][n_j] = dist_matrix[i][j] + self.extended_map[n_i][n_j].value
 
         return dist_matrix
 
@@ -163,14 +145,10 @@ class SOMResultsV2:
     def __compute_distance_matrix_aux(self, i, entry_i):
         for j in range(i + 1, len(self.som_chromosomes)):
             entry_j = self.som_chromosomes[j]
-            # if i == j:
-            #     current_ch_dist_list.append(self.extended_map[entry_j.matrix_x_coord][entry_j.matrix_y_coord].value)
-            # else:
             print(str(i) + " " + str(j))
             current_dist = self.__get_distance_between_chromosomes(entry_i, entry_j)
             self.ch_dist_matrix[i][j] = current_dist
             self.ch_dist_matrix[j][i] = current_dist
-            # self.ch_dist_matrix[i] = current_ch_dist_list
 
     def __compute_distance_matrix(self):
         if self.full_map == list():
@@ -180,12 +158,10 @@ class SOMResultsV2:
         th_list = list()
         for i in range(len(self.som_chromosomes)):
             entry_i = self.som_chromosomes[i]
-            # current_ch_dist_list = [0 for _ in range(i+1)]
             t = Thread(target=self.__compute_distance_matrix_aux, args=[i, entry_i])
             t.start()
             th_list.append(t)
             print("Add thread %d" % i)
-            # self.__compute_distance_matrix_aux(i, entry_i)
         i = len(th_list) - 1
         for th in th_list[::-1]:
             print("join thread %d" % i)
@@ -200,17 +176,12 @@ class SOMResultsV2:
         self.ch_dist_matrix = [[0 for _ in range(len(self.som_chromosomes))] for _ in range(len(self.som_chromosomes))]
         for i in range(len(self.som_chromosomes)):
             entry_i = self.som_chromosomes[i]
-            # current_ch_dist_list = [0 for _ in range(i+1)]
             for j in range(i + 1, len(self.som_chromosomes)):
                 entry_j = self.som_chromosomes[j]
-                # if i == j:
-                #     current_ch_dist_list.append(self.extended_map[entry_j.matrix_x_coord][entry_j.matrix_y_coord].value)
-                # else:
                 print(str(i) + " " + str(j))
                 current_dist = self.__get_distance_between_chromosomes(entry_i, entry_j)
                 self.ch_dist_matrix[i][j] = current_dist
                 self.ch_dist_matrix[j][i] = current_dist
-                # self.ch_dist_matrix[i] = current_ch_dist_list
         self.__dump_ch_dist_matrix_in_file()
 
     def get_karyotype(self):
@@ -224,7 +195,7 @@ class SOMResultsV2:
         chosen = list()
         old_len_chosen = len(chosen) - 2
         while old_len_chosen != len(chosen):
-            min_dist = 9999999999
+            min_dist = math.inf
             old_len_chosen = len(chosen)
             print("Chosen: %s" % str(chosen))
             min_i = -1
@@ -253,7 +224,6 @@ class SOMResultsV2:
 
         print("len chosen: %d" % len(self.karyotype))
         print("len som results: %d" % len(self.som_chromosomes))
-        # print(sorted(self.karyotype))
 
     def __load_dist_matrix_from_file(self):
         """
@@ -269,7 +239,6 @@ class SOMResultsV2:
                 first_line = lines[0]
                 lines = lines[1:]
                 n = int(first_line.split(",")[0].strip())
-                m = int(first_line.split(",")[1].strip())
                 self.ch_dist_matrix = list()
                 for i in range(0, n):
                     current_dist_matrix_line = list()
@@ -307,10 +276,7 @@ class SOMResultsV2:
         return self.__dist_matrix_file
 
 
-def interpret_som_result(
-        som_results_file_path=r'D:\GIT\Karyotyping-Project\PythonProject\D_PostProcessSOMResults\13_mai_all_features_37.txt.out',
-        karyo_pairs_file=r'D:\GIT\Karyotyping-Project\PythonProject\Z_Images\kar-segm\1_test_1apr\pairs.txt'
-):
+def interpret_som_result(som_results_file_path, karyo_pairs_file):
     karyo_pairs_file_out = som_results_file_path[:-4] + "_pairs.out"
     obj = SOMResultsV2(som_results_file_path)
     # obj.pretty_print_som_results()
@@ -337,7 +303,3 @@ def interpret_som_result(
                 else:
                     g.write("Dist[%d][-] = -\n" % karyotype_entry[0])
     return obj.get_dist_matrix_file_path(), k_obj.karyotype_image_path
-
-
-if __name__ == "__main__":
-    interpret_som_result()
