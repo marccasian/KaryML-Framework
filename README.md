@@ -1,5 +1,6 @@
-# KaryML-Framework - Under construction - 
-[![DOI](https://img.shields.io/badge/DOI-10.1109/ICCP.2018.8516580-blue.svg)](https://doi.org/10.1109/ICCP.2018.8516580)
+# KaryML-Framework 
+Original paper: [![DOI](https://img.shields.io/badge/DOI-10.1109/ICCP.2018.8516580-blue.svg)](https://doi.org/10.1109/ICCP.2018.8516580)
+
 ## About
 
   _Machine Learning_ (ML) research within medicine and healthcare represents one of the most challenging domains for both engineers and medical specialists. One of the most desired tasks to be accomplished using ML applications is represented by disease detection. A good example of such a task is the detection of genetic abnormalities like Down syndrome, Klinefelter syndrome or Hemophilia. Usually, clinicians are doing chromosome analysis using the karyotype to detect such disorders. The main contribution of the current article consists of introducing a new approach called _KaryML Framework_, which is extending our previous research: _KarySOM: An Unsupervised Learning based Approach for Human Karyotyping using Self-Organizing Maps_ . Our major goal is to provide a new method for an automated karyotyping system using unsupervised techniques. Additionally, we provide computational methods for chromosome feature extraction and to develop an intelligent system designed to aid clinicians during the karyotyping process.
