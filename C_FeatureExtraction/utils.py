@@ -40,7 +40,7 @@ class Segment:
 
     def shortest_dist_to_point(self, other_point):
         if self.a.x == self.b.x and self.a.y == self.b.y:
-            return math.sqrt((other_point.x-self.a.x)**2 + (other_point.y-self.a.y)**2)
+            return math.sqrt((other_point.x - self.a.x) ** 2 + (other_point.y - self.a.y) ** 2)
         dist = None
         try:
             dist = math.sqrt(self.sq_shortest_dist_to_point(other_point))
@@ -65,12 +65,13 @@ def timing(f):
         time1 = time.time()
         ret = f(*args)
         time2 = time.time()
-        print('%s function took %0.3f ms' % (f.__name__, (time2-time1)*1000.0))
+        print('%s function took %0.3f ms' % (f.__name__, (time2 - time1) * 1000.0))
         return ret
+
     return wrap
 
 
-if __name__ == "__main__":
+def test_point_to_segment_distance():
     segments_and_point_and_answer = [
         [Segment(Point(1.0, 1.0), Point(1.0, 1.0)), Point(2.0, 2.0), math.sqrt(2.0)],
         [Segment(Point(1.0, 1.0), Point(1.0, 3.0)), Point(2.0, 3.0), 1.0],
@@ -97,8 +98,11 @@ if __name__ == "__main__":
         [Segment(Point(0.0, 1.0), Point(0.0, 0.0)), Point(-1, -5), math.sqrt(26)],
         [Segment(Point(0.0, 1.0), Point(0.0, 0.0)), Point(3, 2), math.sqrt(10)]
     ]
-
     for i, (segment, point, answer) in enumerate(segments_and_point_and_answer):
         result = segment.shortest_dist_to_point(point)
         print(result)
         assert (abs(result - answer) <= 0.001)
+
+
+if __name__ == "__main__":
+    test_point_to_segment_distance()

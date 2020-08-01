@@ -6,8 +6,7 @@ from C_FeatureExtraction.medial_axis_len import Curve
 
 
 class ChromosomeLengthComputer:
-    def __init__(self, img_path_to_compute,
-                 ch_outs_dir_name=r"D:\GIT\Karyotyping-Project\PythonProject\Z_Images\Outputs\tests"):
+    def __init__(self, img_path_to_compute, ch_outs_dir_name):
         """
 
         :param img_path_to_compute: path to chromosome image
@@ -22,7 +21,6 @@ class ChromosomeLengthComputer:
     def get_chromosome_length(self):
         self.__get_or_create_outs_dir()
         self.__medial_axis_computer = MedialAxis(self.__image_path, self.__helper_dir)
-        # curve_img = self.__medial_axis_computer.get_bin_inv_img_path()
         curve_path = self.__medial_axis_computer.get_medial_axis_img()
         if not Curve.is_valid_curve(curve_path):
             curve_path = self.__medial_axis_computer.get_bin_inv_img_path()
@@ -33,7 +31,3 @@ class ChromosomeLengthComputer:
     def __get_or_create_outs_dir(self):
         if not os.path.exists(self.__helper_dir):
             os.makedirs(self.__helper_dir)
-if __name__ == "__main__":
-    img_path = r'D:\GIT\Karyotyping-Project\PythonProject\C_FeatureExtraction\bandage_img_test\8.bmp'
-    outs = r'D:\GIT\Karyotyping-Project\PythonProject\C_FeatureExtraction\bandage_img_test'
-    print(ChromosomeLengthComputer(img_path, outs).get_chromosome_length())

@@ -1,9 +1,6 @@
 import math
 import os
-
-import imutils
 from cv2 import cv2
-from matplotlib.pyplot import axhline
 
 from B_Straightening import compute_projection_vector
 from B_Straightening import rotate_image
@@ -128,25 +125,3 @@ class ShortChromatidRation:
         print("long_ch = " + str(long_ch_len))
         print("ch_len = " + str(ch_length))
         self.__short_chromatid_ratio = short_ch_len / long_ch_len
-
-
-def test_1(obj):
-    import matplotlib.pyplot as plt
-
-    a = 0
-    img_bg = obj.img
-    # img_bg = imutils.rotate_bound(img_bg, 90)[:, 1:, :]
-    # img_bg = imutils.rotate_bound(obj.orig_threshold_img, 90)
-    plt.imshow(img_bg, zorder=0)
-    centromere_position = obj.get_centromere_relative_position()
-    plt.axhline(linewidth=4, color='r', y=int(centromere_position))
-
-    plt.show()
-
-
-if __name__ == "__main__":
-    img_path = r'__disertation_experiments\dataset\1\1\contrast_split\straight\13-0.bmp'
-    out_dir = r'__disertation_experiments\dataset\1\1\Outputs\13-0'
-    obj = ShortChromatidRation(img_path, out_dir)
-    print(obj.get_short_chromatid_ratio())
-    test_1(obj)

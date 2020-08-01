@@ -1,12 +1,12 @@
 import cv2
 import os
 import numpy as np
-import A_Segmentation.common_operations as common_operations
+
 from C_FeatureExtraction.feature_extractions_constants import *
 
 
 class MedialAxis:
-    def __init__(self, img_path, outputs_dir=r'D:\GIT\Karyotyping-Project\PythonProject\Z_Images\Outputs'):
+    def __init__(self, img_path, outputs_dir):
         self.__img_path = img_path
         self.__img = None
         self.__outputs_root_dir = outputs_dir
@@ -58,7 +58,6 @@ class MedialAxis:
         self.__medial_axis_img = np.zeros(self.__img.shape, np.float64)
 
         ret, img = cv2.threshold(self.__img, 245, 255, cv2.THRESH_BINARY_INV)
-        # img = self.__border_image(img, 0)
         cv2.imwrite(self.__bin_inv_image_path, img[1:-1, 1:-1])
         element = cv2.getStructuringElement(cv2.MORPH_CROSS, (3, 3))
         done = False
@@ -89,10 +88,3 @@ class MedialAxis:
             self.__img_outputs_feature_extractor_medial_axis_dir,
             "%s-medial.bmp" % self.__img_name.split(".")[0]),
             self.__img[1:-1, 1:-1])
-
-
-if __name__ == "__main__":
-    medial_path = r'd:\GIT\Karyotyping-Project\PythonProject\Z_Images\autom\1\contrast_split\straight\42-90.bmp'
-    obj = MedialAxis(medial_path)
-    leng = obj.get_medial_axis_img()
-    print(leng)

@@ -1,20 +1,17 @@
 import json
 import os
-
 import math
 import pickle
 
-from cv2 import cv2
-
+from a_Common.my_logger import LOGGER
+from A_Segmentation.constants import *
 import A_Segmentation.common_operations as common_operations
 import B_Straightening.compute_projection_vector as compute_projection_vector
 from C_FeatureExtraction.centromere_related_features import ShortChromatidRation
 from C_FeatureExtraction.bandage_profile_feature import BandageFeature
 from C_FeatureExtraction.feature_extractions_constants import *
-from A_Segmentation.constants import *
 import C_FeatureExtraction.medial_axis as medial_axis
 import C_FeatureExtraction.medial_axis_len as medial_axis_len
-from a_Common.my_logger import LOGGER
 
 
 class FeatureExtractor:
@@ -87,7 +84,7 @@ class FeatureExtractor:
     def __init_feature_dict(self):
         segments = list()
 
-        with open(self.__segments_file, "rb") as fp:  # Unpickling
+        with open(self.__segments_file, "rb") as fp:
             segments = pickle.load(fp)
         for file in self.get_all_images():
             self.features[file] = dict()
@@ -201,30 +198,23 @@ class FeatureExtractor:
                 line += key
                 for feature in self.FEATURE_USED_FOR_CLUSTERING:
                     feature = feature[0]
-                    # if feature == CHROMOSOME_LEN_KEY:
-                    #     line += ", " + str(self.features[key][feature])
                     if feature == BANDAGE_PROFILE_KEY:
                         line += ", " + ",".join([str(v) for v in self.features[key][feature]])
                     else:
                         line += ", " + str(self.features[key][feature])
                 line += "\n"
                 f.write(line)
-        with open(self.features_out_json_file, "w") as fp:  # dump to json file
+        with open(self.features_out_json_file, "w") as fp:
             json.dump(self.features, fp, indent=4)
-        with open(self.features_out_pickle_file, "wb") as fp:  # Pickling
+        with open(self.features_out_pickle_file, "wb") as fp:
             pickle.dump(self.features, fp)
 
         if len(self.FEATURE_USED_FOR_CLUSTERING) > 1 or (
                 len(self.FEATURE_USED_FOR_CLUSTERING) == 1
                 and self.FEATURE_USED_FOR_CLUSTERING[0][0] == BANDAGE_PROFILE_KEY):
             with open(self.features_weights_out_file, "w") as f:
-                # feature_weight = 1 / len(self.FEATURE_USED_FOR_CLUSTERING)
-                # weights_string = str(feature_weight)
                 weights_string = ""
-                # for feature in self.FEATURE_USED_FOR_CLUSTERING[1:]:
                 for i in range(len(self.FEATURE_USED_FOR_CLUSTERING)):
-                    # if feature == CHROMOSOME_LEN_KEY:
-                    #     line += ", " + str(self.features[key][feature])
                     feature = self.FEATURE_USED_FOR_CLUSTERING[i][0]
                     feature_weight = self.FEATURE_USED_FOR_CLUSTERING[i][1]
                     if feature == BANDAGE_PROFILE_KEY:
@@ -239,7 +229,6 @@ class FeatureExtractor:
 
     def __get_chromosome_len_using_curve_len(self, img):
         medial_axis_obj = medial_axis.MedialAxis(img, self.__outputs_root_dir)
-        # curve_path = medial_axis_obj.get_bin_inv_img_path()
         curve_path = medial_axis_obj.get_medial_axis_img()
         if not medial_axis_len.Curve.is_valid_curve(curve_path):
             curve_path = medial_axis_obj.get_bin_inv_img_path()
@@ -280,38 +269,7 @@ class FeatureExtractor:
 def extract_features_from_imgs(ready_dir, root_dir, outs_dir, features=0x07, weights=None):
     obj = FeatureExtractor(ready_dir, root_dir, outs_dir, weights=weights)
     obj.extract_features(features)
-    out_dir = os.path.join(ready_dir, "cu_linia")
+    out_dir = os.path.join(ready_dir, "with_line")
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
-    # lista = []
-    # for key in obj.features:
-    #     if CHROMOSOME_LEN_KEY in obj.features[key] \
-    #         and BEST_IMAGE_PATH in obj.features[key] \
-    #             and CENTROMERE_POSITION in obj.features[key]:
-    #         ind = 0
-    #         for i in range(len(lista)):
-    #             ind = i
-    #             if lista[i][CHROMOSOME_LEN_KEY] < obj.features[key][CHROMOSOME_LEN_KEY]:
-    #                 continue
-    #             else:
-    #                 break
-    #         lista.insert(ind, obj.features[key])
-    #         img = common_operations.read_image(obj.features[key][BEST_IMAGE_PATH])
-    #         img[int(round(obj.features[key][CENTROMERE_POSITION])), :] = (255, 0, 0)
-    #         cv2.imwrite(os.path.join(out_dir, os.path.basename(key)), img)
-    # print("\n".join([str(i) for i in lista]))
     return out_dir, obj.features_out_file, obj.features_weights_out_file
-
-
-if __name__ == "__main__":
-    r_dir = r'__disertation_experiments\dataset\7\7\contrast_split\straight'
-    root_dir = r'__disertation_experiments\dataset\7\7'
-    outs_dir = r'__disertation_experiments\dataset\7\7\Outputs'
-    # extract_features_from_imgs(r_dir,
-    #                            root_dir,
-    #                            outs_dir)
-    obj = FeatureExtractor(r_dir, root_dir, outs_dir)
-    # obj.extract_short_chromatid_ratio_feature_for_one_image(
-    #     r"d:\GIT\Karyotyping-Project\PythonProject\Z_Images\autom\3\contrast_split\straight\41-85.bmp")
-    obj.extract_features(0x04)
-    #                         experiments/1/contrast_split/5_c.bmp
