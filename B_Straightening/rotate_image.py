@@ -47,9 +47,3 @@ class RotateImage:
 
     def get_output_image_path(self):
         return self.output_image_path
-
-
-if __name__ == '__main__':
-    img_path = r'D:\GIT\Licenta\1stStep\NoiseRemoval\img_me\8094_01-04_011211100401\contrast_split\3.jpg'
-    rotateObj = RotateImage(output_dir='.')
-    rotateObj.rotate_image(img_path, 30)

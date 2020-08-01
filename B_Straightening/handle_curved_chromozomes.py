@@ -1,17 +1,13 @@
 import math
-
 import shutil
 from cv2 import cv2
-
-from PIL import Image
 import os
-
 import numpy as np
 
+import A_Segmentation.constants as constants
+import A_Segmentation.common_operations as common_operations
 import B_Straightening.rotate_image as rotate_image
 import B_Straightening.compute_projection_vector as compute_projection_vector
-import A_Segmentation.common_operations as common_operations
-import A_Segmentation.constants as constants
 
 
 class HandleCurvedChromosome:
@@ -55,7 +51,6 @@ class HandleCurvedChromosome:
                 shutil.copy2(self.best_image_path, self.ready_dir)
             return True
         else:
-            # copy image to ready dir
             shutil.copy2(image_path, self.ready_dir)
             return False
 
@@ -112,40 +107,11 @@ class IsCurvedChromosome:
         image = common_operations.read_image(self.image_path)
         compute_projection_vector_obj = compute_projection_vector.ComputeProjectionVector()
         h_vector = compute_projection_vector_obj.get_horizontal_projection_vector(self.image_path)
-        v_vector = compute_projection_vector_obj.get_vertical_projection_vector(self.image_path)
-        # todo add code that validate if a chromosome is or not curved
         ch_area = sum(h_vector)
         total_area = image.shape[0] * image.shape[1]
         proc = ch_area / total_area
         if proc < 0.6:
-            print(self.image_path)
-            print(proc)
-            print()
-            # out_c_dir = os.path.join(
-            #     os.path.dirname(
-            #         os.path.dirname(self.image_path)
-            #     ),
-            #     "curved"
-            # )
-            # if not os.path.exists(out_c_dir):
-            #     os.makedirs(out_c_dir)
-            # shutil.copy2(self.image_path, os.path.join(
-            #     out_c_dir,
-            #     os.path.basename(self.image_path)
-            # ))
             return True
-        # out_c_dir = os.path.join(
-        #     os.path.dirname(
-        #         os.path.dirname(self.image_path)
-        #     ),
-        #     "ready"
-        # )
-        # if not os.path.exists(out_c_dir):
-        #     os.makedirs(out_c_dir)
-        # shutil.copy2(self.image_path, os.path.join(
-        #     out_c_dir,
-        #     os.path.basename(self.image_path)
-        # ))
         return False
 
 
@@ -242,11 +208,8 @@ class StraightenCurvedChromosome:
     def unify_chromosomes_parts(self, out_path):
         img1 = common_operations.read_image(self.best_img1_path)
         img2 = common_operations.read_image(self.best_img2_path)
-        # cut1 = img1.shape[0] - self.img1.shape[0]
-        # cut2 = img2.shape[0] - self.img2.shape[0]
         if self.best_angle_2 > 90:
             img2 = np.flipud(img2)
-            # todo  Ar trebui sa gasesc o formula mai buna, in care sa nu ma bazez pe: 6 grade = 1px
             cut2 = 180 - self.best_angle_2
         else:
             cut2 = self.best_angle_2
@@ -256,7 +219,6 @@ class StraightenCurvedChromosome:
 
         if self.best_angle_1 > 90:
             img1 = np.flipud(img1)
-            # todo  Ar trebui sa gasesc o formula mai buna, in care sa nu ma bazez pe: 6 grade = 1px
             cut1 = 180 - self.best_angle_1
         else:
             cut1 = self.best_angle_1
@@ -268,12 +230,6 @@ class StraightenCurvedChromosome:
         h = int(img1.shape[0]) + int(img2.shape[0])
         if h > cut1 + cut2:
             h = h - cut1 - cut2
-        # todo trebuie sa fixez bugul de aici....
-        # if cut1 > 0:
-        #     img3[:img1.shape[0]-cut1, :img1.shape[1]] = img1[:-cut1, :]
-        # else:
-        #     img3[:img1.shape[0], :img1.shape[1]] = img1[:, :]
-        # img3[img1.shape[0]-cut1:, :img2.shape[1]] = img2[cut2:, :]
         offset1, offset2 = self.__get_imgs_offset(img1, img2, cut1, cut2)
         print("         Img1   Img2")
         print("Shape: %s   %s" % (str(img1.shape), str(img2.shape)))
@@ -297,7 +253,7 @@ class StraightenCurvedChromosome:
         cv2.imwrite(out_path, img3)
         print("========================================================")
 
-    def __get_imgs_offset(self, img1, img2, cut1, cut2, shape=None):
+    def __get_imgs_offset(self, img1, img2, cut1, cut2):
         img1_last_row = img1[img1.shape[0] - max(cut1, 0) - 1]
         img2_first_row = img2[max(0, cut2)]
         img1_left, img1_right = self.__find_limits(img1_last_row)
@@ -309,7 +265,6 @@ class StraightenCurvedChromosome:
         print("Img1 left %d right %d" % (img1_left, img1_right))
         print("Img2 left %d right %d" % (img2_left, img2_right))
         if img1.shape[1] > img2.shape[1]:
-            # img2_offset = min(len(img1_last_row) - len(img2_first_row), img1_mid_offset - img2_mid_offset)
             if img1_mid_offset - img2_mid_offset > 0:
                 img1_offset = 0
                 img2_offset = img1_mid_offset - img2_mid_offset
@@ -317,7 +272,6 @@ class StraightenCurvedChromosome:
                 img1_offset = img2_mid_offset - img1_mid_offset
                 img2_offset = 0
         else:
-            # img1_offset = min(len(img2_first_row) - len(img1_last_row), img2_mid_offset - img1_mid_offset)
             if img2_mid_offset - img1_mid_offset > 0:
                 img1_offset = img2_mid_offset - img1_mid_offset
                 img2_offset = 0
@@ -329,21 +283,16 @@ class StraightenCurvedChromosome:
     @staticmethod
     def __find_limits(list_to_process):
         st = 0
-        # print(list_to_process)
         for st in range(len(list_to_process)):
-            # print(list[st] == constants.WHITE_COLOR_CODE)
             check = list_to_process[st] == constants.WHITE_COLOR_CODE
             if check.all():
-                # if common_operations.almost_eq_pixels(list[st], constants.WHITE_COLOR_CODE):
                 continue
             else:
                 break
         dr = len(list_to_process)
         for dr in range(len(list_to_process) - 1, st, -1):
-            # print(list[dr] == constants.WHITE_COLOR_CODE)
             check = list_to_process[dr] == constants.WHITE_COLOR_CODE
             if check.all():
-                # if common_operations.almost_eq_pixels(list[dr], constants.WHITE_COLOR_CODE):
                 continue
             else:
                 break
@@ -363,38 +312,6 @@ def handle_curved_chromosomes(imgs_dir):
     ready_dir = None
     for path_to_img in get_all_images(imgs_dir):
         obj_handle_curved_ch = HandleCurvedChromosome()
-        res = obj_handle_curved_ch.handle_one_image(path_to_img)
+        obj_handle_curved_ch.handle_one_image(path_to_img)
         ready_dir = obj_handle_curved_ch.ready_dir
     return ready_dir
-
-
-if __name__ == '__main__':
-    # path = r'D:\GIT\Karyotyping-Project\PythonProject\Z_Images\8094_01-04_011211100401\contrast_split\straight\19-100.jpg'
-    # obj = HandleCurvedChromosome()
-    # obj.handle_one_image(path)
-    # height = max(im1.shape[0], im2.shape[1])
-    # width = max(im1.shape[0], im2.shape[1])
-    # # np.zeros((height, width, 3), np.uint8)
-    # vis = np.concatenate((im1, im2), axis=0)
-    # vis1 = np.concatenate((im1, im2), axis=1)
-    #
-    # cv2.imwrite('out_v.png', vis)
-    # cv2.imwrite('out_h.png', vis1)
-    for path in get_all_images(r'D:\GIT\Karyotyping-Project\PythonProject\B_Straightening\TestImgs\straight'):
-        # for path in [r'D:\GIT\Karyotyping-Project\PythonProject\B_Straightening\TestImgs\straight\15-35.bmp']:
-        # obj = IsCurvedChromosome()
-        # obj.is_curved(path)
-        # if '37' not in path:
-        obj = HandleCurvedChromosome()
-        res = obj.handle_one_image(path)
-        # line = obj.best_min_position
-        # image_path = obj.best_image_path
-        #
-        # if res:
-        #     if not os.path.exists(r'D:\GIT\Karyotyping-Project\PythonProject\Z_Images\8094_01-04_011211100401\contrast_split\curved'):
-        #         os.makedirs(r'D:\GIT\Karyotyping-Project\PythonProject\Z_Images\8094_01-04_011211100401\contrast_split\curved')
-        #
-        #     img = common_operations.read_image(image_path)
-        #     for j in range(img.shape[1]):
-        #         img[line][j] = [255, 0, 0]
-        #     cv2.imwrite(os.path.join(r'D:\GIT\Karyotyping-Project\PythonProject\Z_Images\8094_01-04_011211100401\contrast_split\curved', os.path.basename(path)), img)

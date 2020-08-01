@@ -71,31 +71,9 @@ def get_all_images(dir_path="imgs"):
 def update(imgs_dir_path, selected_imgs_dir_path):
     if not os.path.exists(selected_imgs_dir_path):
         os.makedirs(selected_imgs_dir_path)
-    # rotate_image_obj = rotate_image.RotateImage()
-    # rotate_image_obj.rotate_image(img_path, 30)
-    # print(rotate_image_obj.get_output_image_path())
-    # compute_projection_vector_obj = compute_projection_vector.ComputeProjectionVector()
-    # print(compute_projection_vector_obj.get_horizontal_projection_vector(rotate_image_obj.get_output_image_path()))
     for img_path in get_all_images(imgs_dir_path):
         orientation_updater = ChromosomeOrientationUpdater(img_path)
         orientation_updater.update_chromosome_orientation()
         print(orientation_updater.best_image_path)
         shutil.copy2(orientation_updater.best_image_path, selected_imgs_dir_path)
     return selected_imgs_dir_path
-
-
-if __name__ == "__main__":
-    # img_path =\
-    #     r'D:\GIT\Karyotyping-Project\PythonProject\Z_Images\8094_01-04_011211100401\contrast_split\individual\19.jpg'
-    imgs_dir_path = \
-        r'd:\GIT\Karyotyping-Project\PythonProject\Z_Images\autom\7\contrast_split\individual'
-    img_path = \
-        r'd:\GIT\Karyotyping-Project\PythonProject\Z_Images\autom\7\contrast_split\individual\40.bmp'
-    selected_imgs_dir_path = \
-        r'd:\GIT\Karyotyping-Project\PythonProject\Z_Images\autom\7\contrast_split\straight'
-    # update(imgs_dir_path, selected_imgs_dir_path)
-
-    orientation_updater = ChromosomeOrientationUpdater(img_path)
-    orientation_updater.update_chromosome_orientation()
-    print(orientation_updater.best_image_path)
-    shutil.copy2(orientation_updater.best_image_path, selected_imgs_dir_path)

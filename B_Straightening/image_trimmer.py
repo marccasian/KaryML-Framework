@@ -1,10 +1,7 @@
-import os
-
 from cv2 import cv2
 
 import B_Straightening.compute_projection_vector as compute_projection_vector
 import A_Segmentation.common_operations as common_operations
-# todo ... remove noise.... threshold maybe
 
 
 class TrimImage:
@@ -43,9 +40,3 @@ class TrimImage:
         image = common_operations.read_image(image_path)
         new_image = image[y1:y2, x1:x2]
         cv2.imwrite(image_path, new_image)
-
-
-if __name__ == '__main__':
-    path = '1.jpg'
-    obj = TrimImage()
-    obj.trim(path)
