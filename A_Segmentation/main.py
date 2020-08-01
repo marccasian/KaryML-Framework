@@ -1,6 +1,5 @@
 import os
 import pickle
-import sys
 import traceback
 
 from a_Common.my_logger import LOGGER
@@ -13,18 +12,18 @@ class ImageSegmenter:
     def __init__(self, image_list=None):
         self.logger = LOGGER.getChild("segmentation")
         self.images = image_list
+        self.logger = LOGGER.getChild("segmentation")
+        self.img_segmenter = ImageSegmenter(self.images)
 
     def segment_images(self):
         for image in self.images:
-            logger.debug("Image: {}".format(image))
+            self.logger.debug("Image: {}".format(image))
             try:
-                img_segmenter.process_one_image(image, logger)
+                self.img_segmenter.process_one_image(image, self.logger)
             except BaseException as exc:
                 self.logger.exception("Exception:{}; Traceback:{}".format(exc, traceback.format_exc()))
 
-    def process_one_image(self,
-                          input_img_path=r"D:\GIT\Licenta\1stStep\NoiseRemoval\try_imgs\8094_01-04_011211100401.JPG",
-                          invert=False):
+    def process_one_image(self, input_img_path, invert=False):
         pre_proc_obj = pre_process_image.ImagePreProcessor(input_img_path)
         pre_proc_obj.process()
         dst_dir = pre_proc_obj.dst_dir
@@ -57,25 +56,4 @@ class ImageSegmenter:
         self.logger.debug(dst_dir)
         self.logger.debug(obj_split.individual_dir)
         self.logger.debug(obj_split.output_dir)
-        # d:\GIT\Karyotyping-Project\PythonProject\Z_Images\autom\1
-        # d:\GIT\Karyotyping-Project\PythonProject\Z_Images\autom\1\contrast_split\individual
-        # d:\GIT\Karyotyping-Project\PythonProject\Z_Images\autom\1\contrast_split
         return dst_dir, obj_split.individual_dir, obj_split.output_dir
-
-
-def get_all_images(dir_path="imgs"):
-    return [os.path.join(dir_path, f)
-            for f in os.listdir(dir_path)
-            if f.lower().endswith('.jpg')
-            or f.lower().endswith('.bmp')
-            or f.lower().endswith('.jpeg')
-            ]
-
-
-if __name__ == "__main__":
-    logger = LOGGER.getChild("segmentation")
-    logger.info("cwd={}".format(os.getcwd()))
-    images = get_all_images(r'..\Z_Images\test')
-    logger.debug("Images: {}".format(images))
-    img_segmenter = ImageSegmenter(images)
-    img_segmenter.segment_images()

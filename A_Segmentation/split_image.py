@@ -1,12 +1,10 @@
 import os
 from typing import List
 
-import numpy as np
-
+from a_Common.my_logger import LOGGER
 import A_Segmentation.common_operations as common_operations
 from A_Segmentation.color_image import ChromosomeFrame
 from A_Segmentation.constants import *
-from a_Common.my_logger import LOGGER
 
 
 class ImageSpliter:

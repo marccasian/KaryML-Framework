@@ -4,7 +4,7 @@ from cv2 import cv2
 from A_Segmentation.constants import *
 
 
-def read_image(image_path, inverted = False):
+def read_image(image_path, inverted=False):
     if inverted:
         print("Inverted")
         return cv2.bitwise_not(cv2.imread(image_path))

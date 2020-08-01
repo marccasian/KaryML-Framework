@@ -7,11 +7,11 @@ import sys
 import time
 from typing import List
 
+from A_Segmentation.common_operations import get_all_images
 from a_Common.my_logger import LOGGER, get_new_logger
 from a_Common.constants import *
 
 from A_Segmentation.main import ImageSegmenter
-from A_Segmentation.main import get_all_images
 
 from B_Straightening.chromosome_orientation_updater import update as update_orientation
 from C_FeatureExtraction.feature_extractor import extract_features_from_imgs

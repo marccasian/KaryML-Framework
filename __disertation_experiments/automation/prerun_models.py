@@ -42,7 +42,7 @@ FEATURES = [
     15,  # LSBA
     15,  # LSBA
 ]
-NEW_WEIGHTS = [None, None, None, None]  # SA  - asta
+NEW_WEIGHTS = [None, None, None, None]  # SA
 WEIGHTS = [
     None,  # L
     None,  # S
@@ -134,10 +134,6 @@ for i in range(len(FEATURES)):
     if index > 0:
         model_name += "-{}".format(index)
     print("{} | {}".format(model_name, " | ".join(weights_lst)))
-print("Modele cu euclidean {}".format(e_nr))
-print("Modele cu weighted euclidean {}".format(we_nr))
 print(", ".join([str(i) for i in range(16)][1:]))
 print(", ".join([str(i) for i in rulat_e][1:]))
 print(", ".join([str(i) for i in rulat_we][1:]))
-
-# nu am rulat cu euclidean features 3,5,6,7

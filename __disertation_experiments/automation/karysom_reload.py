@@ -1,7 +1,6 @@
 import os
 import subprocess
 import sys
-import time
 
 CMD_LINE = r"py -3 __disertation_experiments\automation\runner.py -classifier SOM -ds_entry 1 -features {} -epochs " \
            r"200000 -rows 50 -cols 50"

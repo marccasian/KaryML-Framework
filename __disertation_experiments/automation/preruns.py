@@ -159,13 +159,8 @@ def pre_runs():
     random.shuffle(ds_entries)
     random.shuffle(feature_indexes)
     random.shuffle(times_indexes)
-    # print(ds_entries)
-    # print(feature_indexes)
-    # print(times_indexes)
     total_runs = len(FEATURES) * times * len(ds_entries)
     executed_runs = 0
-    # print(total_runs)
-    # return
     for i in feature_indexes:
         for ds_entry in ds_entries:
             for j in times_indexes:
@@ -182,43 +177,5 @@ def pre_runs():
                                                                 total_runs - executed_runs))
 
 
-def pre_runs_new():
-    """
-    obtained 6 run results for each feature combination in order to obtain a better initial neurons config
-    :return:
-    """
-    assert len(NEW_WEIGHTS) == len(NEW_FEATURES)
-    times = 1
-    # ds_entries = [1, 3, 5, 6, 7, 8]
-    ds_entries = [1]
-    feature_indexes = [i for i in range(len(NEW_FEATURES))]
-    times_indexes = [i for i in range(times)]
-    random.shuffle(ds_entries)
-    random.shuffle(feature_indexes)
-    random.shuffle(times_indexes)
-    # print(ds_entries)
-    # print(feature_indexes)
-    # print(times_indexes)
-    total_runs = len(NEW_FEATURES) * times * len(ds_entries)
-    executed_runs = 0
-    # print(total_runs)
-    # return
-    for ds_entry in ds_entries:
-        for i in feature_indexes:
-            for j in times_indexes:
-                new_cmd_line = CMD_LINE.format(ds_entry, NEW_FEATURES[i])
-                if NEW_WEIGHTS[i]:
-                    new_cmd_line += " -weights {}".format(" ".join([str(k) for k in NEW_WEIGHTS[i]]))
-                print("Retry: {};  Running {}".format(j, new_cmd_line))
-                os.chdir(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-                proc = subprocess.Popen(new_cmd_line, stdout=sys.stdout, stderr=sys.stdout)
-                sout, stderr = proc.communicate()
-                print("Retry: {};  Executed {}. Stdout:{}, Stderr: {}".format(j, new_cmd_line, sout, stderr))
-                executed_runs += 1
-                print("Progress: {}%. {} remaining runs".format((executed_runs / total_runs) * 100,
-                                                                total_runs - executed_runs))
-
-
 if __name__ == '__main__':
-    # pre_runs_new()
     pre_runs()

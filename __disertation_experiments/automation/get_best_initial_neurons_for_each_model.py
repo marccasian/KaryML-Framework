@@ -230,8 +230,6 @@ def get_best_initial_input_neurons_file(classifier_type="FSOM"):
     """
     db.DB_FILE = r'__disertation_experiments\karypy_pre_runs.db'
     feature_indexes = [i for i in range(len(PRE_RUNS_FEATURES))]
-    # random.shuffle(ds_entries)
-    # random.shuffle(feature_indexes)
     total_models = len(PRE_RUNS_FEATURES) * len(ds_entries)
     ds_descriptor = None
     with open(os.path.join(runner.DS_ROOT_DIR_PATH, "description.json"), "r") as f:
@@ -309,10 +307,7 @@ def get_best_initial_input_neurons_file(classifier_type="FSOM"):
     for i in important_msgs:
         print(i)
 
-    # for i in new_paths:
-    #     print(i)
-
-    print("ar mai trebui rulate {}".format(remaining))
+    print("You should run {} more".format(remaining))
 
     return best_runs_for_models
 
@@ -321,12 +316,6 @@ def decide_models_to_evaluate(classifier_type="FSOM"):
     best_runs = get_best_initial_input_neurons_file(classifier_type)
     runs_per_models = dict()
     averaged_models_for_all_ds_entries = dict()
-    # for i in ds_entries:
-    #     per_ds_entry[i] = list()
-    #     averaged_models_for_all_ds_entries[i] = {db.EUCLIDEAN_DISTANCE: list()}
-    #     averaged_models_for_all_ds_entries[i] = {db.WEIGHTED_EUCLIDEAN_DISTANCE: list()}
-    # for run in best_runs:
-    #     per_ds_entry[int(run.input_image_path[-5:][:1])].append(run)
     feature_indexes = [i for i in range(len(PRE_RUNS_FEATURES))]
     prerun_precar_vals = list()
     for i in feature_indexes:

@@ -90,7 +90,6 @@ def add_coloring_to_emit_windows(fn):
 
         ret = fn(*args)
         args[0]._set_color(FOREGROUND_WHITE)
-        # print "after"
         return ret
 
     return new

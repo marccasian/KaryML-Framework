@@ -31,7 +31,7 @@ CONSOLE_HANDLER.setLevel(CLIENT_CONSOLE_LEVEL)
 
 def get_new_logger(leaf, file_name="KaryPy", file_max_mb=64, file_count=16):
     file_path = os.path.join(LOG_FOLDER_PATH, '%s.log' % file_name)
-    file_handle = handlers.RotatingFileHandler(file_path, maxBytes=1024*1024*file_max_mb, backupCount=file_count)
+    file_handle = handlers.RotatingFileHandler(file_path, maxBytes=1024 * 1024 * file_max_mb, backupCount=file_count)
     file_handle.setFormatter(fmt=DEFAULT_LOG_FORMAT)
     file_handle.setLevel(FILE_LOGGING_LEVEL)
     logger = logging.getLogger(leaf)

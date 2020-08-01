@@ -670,7 +670,6 @@ def build_plot():
 
     ax1 = fig.add_subplot(gs[0, 0])
     ax1.set_title("Euclidean Distance", font)
-    # ax1.set_xlabel("Model", font)
     ax1.set_ylabel("PrecKar", font)
     ax1.bar(["M" + str(i) for i in range(1, len(e_m) + 1)], [e_m[i] for i in range(len(e_m))], align='center')
     for i in range(len(e_m)):
@@ -687,7 +686,6 @@ def build_plot():
 
     ax2 = fig.add_subplot(gs[0, 1])
     ax2.set_xlabel("Model", font)
-    # ax2.set_ylabel("PrecKar", font)
     ax2.set_title("Weighted Euclidean Distance", font)
     ax2.bar(["M" + str(i) for i in range(4, len(w_e_m) + 4)], [w_e_m[i] for i in range(len(w_e_m))], align='center')
     for i in range(len(w_e_m)):
@@ -703,8 +701,6 @@ def build_plot():
     ax2.set_ylim(ylim)
 
     ax3 = fig.add_subplot(gs[0, 2])
-    # ax3.set_xlabel("Model",font)
-    # ax3.set_ylabel("PrecKar", font)
     ax3.set_title("Manhattan Distance", font)
     ax3.bar(["M" + str(i) for i in range(1, len(m_m) + 1)], [m_m[i] for i in range(len(m_m))], align='center')
     for i in range(len(m_m)):
@@ -801,11 +797,7 @@ def get_best_initial_input_neurons_file(classifier_type="SOM"):
         else:
             print("Model {}; Features: {}".format(i, ORDERED_SELECTED_FEATURES[i]))
         print("\t Best PrecKar = {:.2f}%".format(np.max(runs_preckar)))
-        # print("\t Mean = {:.2f}%".format(np.mean(runs_preckar)))
-        # print("\t STD = {}".format(np.std(runs_preckar)))
-        # print("\t STDERR = {}".format(stderr))
         conf = 1.96 * stderr
-        # print("\t CI = {:.2f}%".format(conf))
         print("\t AVG +- CI = {:.2f}+-{:.2f}%".format(np.mean(runs_preckar), conf))
         to_ret.append([np.mean(runs_preckar), conf])
     return to_ret
@@ -879,26 +871,19 @@ def kary_ml_vs_karysom(classifier_type="SOM"):
     plt.xlabel("Model", font)
     plt.ylabel("PrecKar", font)
     new_r1 = list(r1)
-    new_r1.append(r1[-1]+1)
+    new_r1.append(r1[-1] + 1)
     new_kary_ml_info = kary_ml_info[:]
     new_kary_ml_info.append([86.03, 0.33])
-    # plt.bar(r1[-1] + 1, 86.03, zorder=3, edgecolor='white', label='KaryML Framework')
 
-    # plt.errorbar(r1[-1] + 1, 86.03, yerr=0.33, ecolor="r", zorder=5)
-    karysom_barlist = plt.bar(r2, [i[0] for i in karysom_info], zorder=3, edgecolor='white', label='KarySOM', width=width)
+    karysom_barlist = plt.bar(r2, [i[0] for i in karysom_info], zorder=3, edgecolor='white', label='KarySOM',
+                              width=width)
     for i in range(len(karysom_barlist)):
         plt.errorbar(r2[i], karysom_info[i][0], yerr=karysom_info[i][1], ecolor="r", zorder=5)
 
-    kary_ml_barlist = plt.bar(new_r1, [i[0] for i in new_kary_ml_info], zorder=3, edgecolor='white', label='KaryML Framework', width=width)
+    kary_ml_barlist = plt.bar(new_r1, [i[0] for i in new_kary_ml_info], zorder=3, edgecolor='white',
+                              label='KaryML Framework', width=width)
     for i in range(len(kary_ml_barlist)):
         plt.errorbar(new_r1[i], new_kary_ml_info[i][0], yerr=new_kary_ml_info[i][1], ecolor="r", zorder=5)
-        # barlist[i].set_color(red)
-    # barlist[0].set_color(yellow)
-    # barlist[7].set_color(yellow)
-    # barlist[8].set_color(yellow)
-    # barlist[9].set_color(blue)
-    # barlist[13].set_color(yellow)
-    # barlist[15].set_color(yellow)
     plt.xticks([r + width for r in range(len(new_kary_ml_info))], NEW_MODELS_LABEL)
     fig.autofmt_xdate()
     plt.grid(color='gray', linestyle=':', linewidth=1, zorder=0)

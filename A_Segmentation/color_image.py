@@ -1,5 +1,4 @@
 import os
-from cv2 import cv2
 
 import A_Segmentation.common_operations as common_operations
 from A_Segmentation.constants import *
@@ -129,10 +128,7 @@ class ColorImage:
         old_pos_x = 0
         old_pos_y = 0
         new_segment_position = self._get_next_pixel_lt_position([10, 10, 10], old_pos_x, old_pos_y)
-        # while new_segment_position:
-        max_x, min_x, max_y, min_y = \
-            self.fill_segment(new_segment_position[0], new_segment_position[1], [0, 0, 0])
-        # new_segment_position = self._get_next_pixel_lt_position([10, 10, 10])
+        self.fill_segment(new_segment_position[0], new_segment_position[1], [0, 0, 0])
 
     def is_valid_chromosome(self, max_x, min_x, max_y, min_y):
         pixel_crop_area = (max_x - min_x) * (max_y - min_y)
@@ -146,13 +142,3 @@ class ColorImage:
             for j in range(min_y, max_y + 1):
                 if common_operations.almost_eq_pixels(self.image[i][j], COLORS[self.__color_index]):
                     self.image[i][j] = WHITE_COLOR_CODE
-
-
-if __name__ == "__main__":
-    img_path = r"D:\GIT\Licenta\1stStep\NoiseRemoval\imgs\8067_01-02_251111093037\segmentation.JPG"
-    obj = ColorImage(img_path)
-    obj.color_image()
-    j = 0
-    for i in obj.segments:
-        obj.logger.debug(str(j) + " - " + str(i))
-        j += 1

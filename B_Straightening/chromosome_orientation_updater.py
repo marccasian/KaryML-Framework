@@ -1,9 +1,8 @@
 import os
-
 import shutil
-
 import math
 
+from A_Segmentation.common_operations import get_all_images
 import B_Straightening.rotate_image as rotate_image
 import B_Straightening.compute_projection_vector as compute_projection_vector
 
@@ -57,15 +56,6 @@ class ChromosomeOrientationUpdater:
         if h > v:
             return h * v
         return math.inf
-
-
-def get_all_images(dir_path="imgs"):
-    return [os.path.join(dir_path, f)
-            for f in os.listdir(dir_path)
-            if f.lower().endswith('.jpg')
-            or f.lower().endswith('.bmp')
-            or f.lower().endswith('.jpeg')
-            ]
 
 
 def update(imgs_dir_path, selected_imgs_dir_path):

@@ -11,6 +11,7 @@ from scipy.stats import pearsonr, spearmanr, kendalltau
 
 from C_FeatureExtraction.feature_extractions_constants import *
 from D_PostProcessSOMResults.expected_karyotype_loader import ExpectedKaryotype
+from __disertation_experiments.plots import length_plotter
 from a_Common.my_logger import get_new_logger
 
 
@@ -154,13 +155,9 @@ class SpearmanCorrelation(Correlation):
         super().__init__(ds_files, spearmanr)
 
 
-# kendalltau
-
-
 class KendalltauCorrelation(Correlation):
     def __init__(self, ds_files: List[Tuple[str, str]]):
         super().__init__(ds_files, kendalltau)
-
 
 
 def correlation_computation(ds_files):
@@ -176,15 +173,6 @@ def correlation_computation(ds_files):
                 print('%.35s' % to_print, end="")
             g.write("\n")
             print()
-    #
-    #
-    # # prepare data
-    # data1 = 20 * randn(1000) + 100
-    # data2 = data1 + (10 * randn(1000) + 50)
-    # # calculate Pearson's correlation
-    # corr, _ = pearsonr(data1, data2)
-    # print('Pearsons correlation: %.3f' % corr)
-    # ExpectedKaryotype("assd")
 
 
 if __name__ == '__main__':

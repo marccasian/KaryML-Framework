@@ -53,7 +53,6 @@ class ClassifierReqFilesGenerator:
 
     def generate_input_feature_files(self, ds_entry: str, features: int = 0x0f, weights: List[float] = None):
         """
-        trebuie sa salvez cumva fisierele a.i sa stiu ce features contin si ce weights
         :param ds_entry: str din 1,3,5,6,7,8
         :param features: 0x0...
         :param weights: list containing used feature weights in case of weighted euclidean
@@ -94,7 +93,6 @@ class ClassifierReqFilesGenerator:
             self.dump_weights_file(feature_used, new_weights_file_path, number_of_bandages)
         else:
             new_weights_file_path = ""
-            # self.logger.debug("No need of weights file")
         return new_weights_file_path, feature_used
 
     @staticmethod
@@ -116,8 +114,6 @@ class ClassifierReqFilesGenerator:
                 line += key
                 for feature in feature_used:
                     feature = feature[0]
-                    # if feature == CHROMOSOME_LEN_KEY:
-                    #     line += ", " + str(self.features[key][feature])
                     if feature == BANDAGE_PROFILE_KEY:
                         line += ", " + ",".join([str(v) for v in features_dict[key][feature]])
                     else:
@@ -130,13 +126,8 @@ class ClassifierReqFilesGenerator:
         if os.path.exists(new_weights_file_path):
             return
         with open(new_weights_file_path, "w") as f:
-            # feature_weight = 1 / len(self.FEATURE_USED_FOR_CLUSTERING)
-            # weights_string = str(feature_weight)
             weights_string = ""
-            # for feature in self.FEATURE_USED_FOR_CLUSTERING[1:]:
             for i in range(len(feature_used)):
-                # if feature == CHROMOSOME_LEN_KEY:
-                #     line += ", " + str(self.features[key][feature])
                 feature = feature_used[i][0]
                 feature_weight = feature_used[i][1]
                 if feature == BANDAGE_PROFILE_KEY:
@@ -232,7 +223,8 @@ def main(ds_entry: str, features: int, weights: List[float], nfile: str, mdist: 
 
     how_many_runs_executed = how_many_similar_input_runs_so_far(run_instance_obj, logger, 5179)
     if how_many_runs_executed >= 30:
-        logger.info("Already executed {} similar runs for current cfg: {}".format(how_many_runs_executed, best_run_so_far))
+        logger.info(
+            "Already executed {} similar runs for current cfg: {}".format(how_many_runs_executed, best_run_so_far))
         from a_Common.alarm import ring_sms
         ring_sms()
         return
@@ -247,7 +239,7 @@ def main(ds_entry: str, features: int, weights: List[float], nfile: str, mdist: 
                 initial_neurons_file = best_run_so_far.initial_neurons_file
             else:
                 renamed_path = best_run_so_far.initial_neurons_file.replace("outputs", "{}_needed_outs".format(
-                        classifier_type.lower()))
+                    classifier_type.lower()))
                 if os.path.exists(renamed_path) and os.path.isfile(renamed_path):
                     initial_neurons_file = renamed_path
         if os.path.exists(initial_neurons_file):

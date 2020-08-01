@@ -299,18 +299,9 @@ class StraightenCurvedChromosome:
         return st, dr
 
 
-def get_all_images(dir_path="imgs"):
-    return [os.path.join(dir_path, f)
-            for f in os.listdir(dir_path)
-            if f.lower().endswith('.jpg')
-            or f.lower().endswith('.bmp')
-            or f.lower().endswith('.jpeg')
-            ]
-
-
 def handle_curved_chromosomes(imgs_dir):
     ready_dir = None
-    for path_to_img in get_all_images(imgs_dir):
+    for path_to_img in common_operations.get_all_images(imgs_dir):
         obj_handle_curved_ch = HandleCurvedChromosome()
         obj_handle_curved_ch.handle_one_image(path_to_img)
         ready_dir = obj_handle_curved_ch.ready_dir
